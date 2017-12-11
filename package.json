@@ -1,0 +1,26 @@
+{
+  "name": "care-cost",
+  "version": "1.0.0",
+  "description": "'discover the true cost fluctuation of medical procedure costs around the country'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theamazingprofessionals/care-cost.git"
+  },
+  "author": "Spencer, Umer, Brian, and Michael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theamazingprofessionals/care-cost/issues"
+  },
+  "homepage": "https://github.com/theamazingprofessionals/care-cost#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "handlebars": "^4.0.11",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.28.0"
+  }
+}
