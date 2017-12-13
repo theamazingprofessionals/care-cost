@@ -1,12 +1,17 @@
-var db = require("../models");
+const db = require("../models");
 
-module.exports = function(app) {
-  app.get("/api/proc", function(req, res) {
-  	//console.log("req" + req);
-  	//console.log("res" + res);
-	db.Procedure.findAll({}).then(function(dbProc) {
+module.exports = function (app) {
 
-		res.json(dbProc);
-	});
-  });
+    app.get('/api/procedures', function (req, res) {
+        db.procedureName.findAll({}).then(function (result) {
+            res.json(result);
+        });
+    });
+
+    app.get('/api/providers', function (req, res) {
+        db.providerInfo.findAll({}).then(function (result) {
+            res.json(result);
+        });
+    });
+
 }
