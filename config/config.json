@@ -1,9 +1,9 @@
 {
     "development": {
-        "username": "root",
-        "password": "ShAzeb!985!",
-        "database": "proc_db",
-        "host": "127.0.0.1",
+        "username": "bb2e9e42d9ac4f",
+        "password": "973cf755",
+        "database": "heroku_3af688aac6389e7",
+        "host": "us-cdbr-iron-east-05.cleardb.net",
         "dialect": "mysql",
         "define": {
             "timestamps": false
@@ -24,5 +24,6 @@
         "dialect": "mysql",
         "define": {
             "timestamps": false
+        }
     }
 }
