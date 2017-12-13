@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('providerInfo', {
+    let Provider = sequelize.define('Provider', {
         providerId: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -41,4 +41,8 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: false
 
     });
+    // NOPE!
+    //    Provider.associate = models =>
+    //        Provider.hasMany(models.Procedure);
+    return Provider;
 };

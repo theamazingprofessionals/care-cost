@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('costData', {
+    let Cost = sequelize.define('Cost', {
         providerId: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -30,6 +30,7 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: false
 
     });
+    return Cost
 };
 
 //we'll have to add the associations later!
