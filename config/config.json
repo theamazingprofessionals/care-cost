@@ -1,9 +1,9 @@
 {
     "development": {
-        "username": "bb2e9e42d9ac4f",
-        "password": "973cf755",
-        "database": "heroku_3af688aac6389e7",
-        "host": "us-cdbr-iron-east-05.cleardb.net",
+        "username": "root",
+        "password": "ShAzeb!985!",
+        "database": "medical_cost_db",
+        "host": "127.0.0.1",
         "dialect": "mysql",
         "define": {
             "timestamps": false
@@ -11,19 +11,17 @@
     },
     "test": {
         "username": "root",
-        "password": "ShAzeb!985!",
+        "password": null,
         "database": "proc_db",
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
     "production": {
-        "username": "bb2e9e42d9ac4f",
-        "password": "973cf755",
-        "database": "heroku_3af688aac6389e7",
-        "host": "us-cdbr-iron-east-05.cleardb.net",
+        "use_env_variable": "JAWSDB_URL",
         "dialect": "mysql",
         "define": {
             "timestamps": false
         }
     }
 }
+
