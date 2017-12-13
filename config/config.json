@@ -1,15 +1,18 @@
 {
     "development": {
         "username": "root",
-        "password": "abc123",
-        "database": "carecost_db",
+        "password": "ShAzeb!985!",
+        "database": "proc_db",
         "host": "127.0.0.1",
-        "dialect": "mysql"
+        "dialect": "mysql",
+        "define": {
+            "timestamps": false
+        }
     },
     "test": {
         "username": "root",
-        "password": null,
-        "database": "database_test",
+        "password": "ShAzeb!985!",
+        "database": "proc_db",
         "host": "127.0.0.1",
         "dialect": "mysql"
     },

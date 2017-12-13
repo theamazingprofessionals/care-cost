@@ -22,6 +22,7 @@
     "express": "^4.16.2",
     "handlebars": "^4.0.11",
     "mysql2": "^1.5.1",
+    "path.join": "^1.0.0",
     "sequelize": "^4.28.0"
   }
 }
