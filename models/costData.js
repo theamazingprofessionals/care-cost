@@ -18,11 +18,20 @@ module.exports = function (sequelize, DataTypes) {
         //            },
         //            field: 'procedure_id'
         //        },
-
-
-
         patientPayments: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(10,2),
+            allowNull: false,
+        },
+        hospitalCharges:{
+            type: DataTypes.DECIMAL(10,2), 
+            allowNull: false,
+        },
+        medicarePayments:{
+            type: DataTypes.DECIMAL(10,2), 
+            allowNull: false,
+        },
+        totalPayments:{
+            type: DataTypes.DECIMAL(10,2), 
             allowNull: false,
         }
     }, {
