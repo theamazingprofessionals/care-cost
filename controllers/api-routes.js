@@ -17,4 +17,14 @@ module.exports = function (app) {
         });
     });
 
+    app.get("/api/costs", function (req, res) {
+        db.Cost.findAll({}).then(function (result) {
+            res.json(result);
+        });
+    });
+
+
+
+
+
 }
