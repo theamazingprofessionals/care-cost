@@ -34,8 +34,15 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.provider_info = require('provider_info.js')(sequelize, Sequelize);
-db.procedure_name = require('procedure_name.js')(sequelize, Sequelize);
-db.cost_data = require('cost_data.js')(sequelize, Sequelize);
+// db.provider_info = require('provider_info.js')(sequelize, Sequelize);
+// db.procedure_name = require('procedure_name.js')(sequelize, Sequelize);
+// db.cost_data = require('cost_data.js')(sequelize, Sequelize);
+
+// db.procedure_name.hasMany(db.cost_data);
+// db.provider_info.hasMany(db.cost_data);
+// db.cost_data.belongsTo(db.provider_info);
+// db.cost_data.belongsTo(db.procedure_name);
+
+
 
 module.exports = db;

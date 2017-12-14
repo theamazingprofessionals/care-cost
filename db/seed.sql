@@ -35,6 +35,12 @@ SELECT patient_payments, provider_id, procedure_id
 FROM medical_cost_db.medicare_data;
 
 
+INSERT INTO medical_cost_db.cost_Data(
+	patientPayments, ProviderProviderId, ProcedureProcedureId, hospitalCharges, medicarePayments, totalPayments
+)
+SELECT patient_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_total_payments
+FROM medical_cost_db.medicare_data;
+
 
 
 

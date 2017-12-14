@@ -7,7 +7,7 @@ module.exports = function (app) {
             res.json(result);
         });
     });
-    app.get('/api/procedures:id', function (req, res) {
+    app.get('/api/procedures/:id', function (req, res) {
         db.Procedure.findAll({
             where: {
                 procedureId: req.params.id
@@ -22,9 +22,4 @@ module.exports = function (app) {
             res.json(result);
         });
     });
-
-
-
-
-
 }
