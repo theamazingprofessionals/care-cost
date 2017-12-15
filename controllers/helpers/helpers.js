@@ -21,15 +21,15 @@ module.exports = {
         }
         return averages;
     },
-    countryMinMax: queryResults => {
-        let minState = queryResults[0].Provider.state;
+    costMinMax: queryResults => {
+        let stateMin = queryResults[0].Provider.state;
         let min = queryResults[0].hospitalCharges;
-        let maxState = queryResults[queryResults.length - 1].Provider.state
+        let stateMax = queryResults[queryResults.length - 1].Provider.state
         let max = queryResults[queryResults.length - 1].hospitalCharges;
         let minMax = [{
-            [minState]: min
+            [stateMin]: min
         }, {
-            [maxState]: max
+            [stateMax]: max
         }];
         return minMax
     }

@@ -6,10 +6,7 @@ const helpers = require("./helpers/helpers")
 //I'm not sure whats better, writing very specific routes to get more granial data using helper functions here in the controllers, or writing more general routes and then filtering as needed with our helpers on the client inside of our ajax calls??
 //seems like it'd be less repetitive on the client, but either way we can move stuff around pretty easily
 
-
-
-
-
+//once we have a better idea of the exactly how the front end is gonna function we should probably also consider sending some data along with the req.body instead of relying on params so heavily
 
 
 
@@ -40,6 +37,22 @@ module.exports = function (app) {
     });
 
 
+    app.get("/api/cost/:zip", function (req, res) {
+        db.Cost.findAll({
+            order: [['hospitalCharges', 'DESC']],
+            include: [{
+                model: db.Provider,
+                where: {
+                    zipCode: req.params.zip
+                },
+            }],
+
+        }).then(function (result) {
+            res.json(result);
+        });
+    });
+
+
     //all costs by id and state
     app.get("/api/cost/:id/:state", function (req, res) {
         db.Cost.findAll({
@@ -49,7 +62,6 @@ module.exports = function (app) {
             },
             include: [{
                 model: db.Provider,
-                attributes: ['state', 'city', 'providerName'],
                 where: {
                     state: req.params.state
                 }
@@ -62,7 +74,7 @@ module.exports = function (app) {
 
 
 
-    //collect state wide average cost for a given procedure using the 'stateCostAverage' helper function
+    //get state wide average cost for a given procedure using the 'stateCostAverage' helper function
     app.get("/api/avg/:id", function (req, res) {
         db.Cost.findAll({
             where: {
@@ -80,6 +92,7 @@ module.exports = function (app) {
     });
 
 
+    //get country wide min/max costs for a given procedure
     app.get("/api/mm/:id", function (req, res) {
         db.Cost.findAll({
             where: {
@@ -92,19 +105,36 @@ module.exports = function (app) {
             }],
             order: [['hospitalCharges', 'DESC']]
         }).then(function (result) {
-            result = helpers.countryMinMax(result)
+            result = helpers.costMinMax(result)
             res.json(result)
         })
-    })
+    });
+
+    //get state wide min/max for a given procedure
+    app.get("/api/mm/:state/:id", function (req, res) {
+        db.Cost.findAll({
+            where: {
+                ProcedureProcedureId: req.params.id,
+            },
+            attributes: ['ProcedureProcedureId', 'hospitalCharges'],
+            include: [{
+                model: db.Provider,
+                where: {
+                    state: req.params.state
+                }
+            }],
+            order: [['hospitalCharges', 'DESC']]
+        }).then(function (result) {
+            result = helpers.costMinMax(result)
+            res.json(result)
+        })
+    });
+
+
+
 
 
 };
-
-
-
-
-
-
 
 
 
