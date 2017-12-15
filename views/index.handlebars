@@ -2,7 +2,7 @@ Handlebars.registerHelper('list', function(states, options) {
   var out = "<ol>";
 
   for(var i=0, l=states.length; i<l; i++) {
-    out = out + "<li>" + options.fn(items[i]) + "</li>";
+    out = out + "<li>" + options.fn(states[i]) + "</li>";
   }
 
   return out + "</ol>";
