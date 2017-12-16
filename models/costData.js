@@ -1,24 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
-    let Cost = sequelize.define('Cost', {
-<<<<<<< HEAD
-        //        providerId: {
-        //            type: DataTypes.INTEGER(11),
-        //            allowNull: false,
-        //            references: {
-        //                model: 'provider_info',
-        //                key: 'provider_id'
-        //            },
-        //            field: 'provider_id'
-        //        },
-        //        procedureId: {
-        //            type: DataTypes.INTEGER(11),
-        //            allowNull: false,
-        //            references: {
-        //                model: 'procedure_name',
-        //                key: 'procedure_id'
-        //            },
-        //            field: 'procedure_id'
-        //        },
+    let Cost = sequelize.define('Cost', 
+    {
         patientPayments: {
             type: DataTypes.DECIMAL(10,2),
             allowNull: false,
@@ -33,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         totalPayments:{
             type: DataTypes.DECIMAL(10,2), 
-=======
+        },
         patientPayments: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
@@ -48,7 +30,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         totalPayments: {
             type: DataTypes.DECIMAL(10, 2),
->>>>>>> 5556fd817268883a4a10e4c538f92257730c7c44
             allowNull: false,
         }
     }, {

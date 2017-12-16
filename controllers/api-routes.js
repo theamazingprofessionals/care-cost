@@ -14,7 +14,7 @@ module.exports = function (app) {
 
     //all procedures
     app.get('/api/procedures', function (req, res) {
-        db.Provider.findAll({}).then(function (result) {
+        db.Procedure.findAll({}).then(function (result) {
             res.json(result);
         });
     });
@@ -35,10 +35,6 @@ module.exports = function (app) {
             res.json(result);
         });
     });
-
-}
-
-
 
     app.get("/api/cost/:zip", function (req, res) {
         db.Cost.findAll({
@@ -133,13 +129,7 @@ module.exports = function (app) {
         })
     });
 
-
-
-
-
-};
-
-
+}
 
 //// examples ////
 

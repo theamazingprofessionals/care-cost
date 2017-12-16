@@ -32,15 +32,27 @@ SELECT patient_oop_payments, provider_id, procedure_id, average_covered_charges,
 FROM medical_cost_db.medicare_data;
 
 
-<<<<<<< HEAD
 INSERT INTO medical_cost_db.cost_Data(
 	patientPayments, ProviderProviderId, ProcedureProcedureId, hospitalCharges, medicarePayments, totalPayments
 )
 SELECT patient_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_total_payments
 FROM medical_cost_db.medicare_data;
 
+CREATE TABLE patient_data
+(
+	patientId INT NOT NULL AUTO_INCREMENT, 
+	name VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL, 
+	healthScore INT NOT NULL, 
+	zipCode INT NOT NULL,
+	PRIMARY KEY (patientId)
+);
+
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Jim Jones", "Jim.Jones@nowhere.com", 3, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Jessica Jones", "Jessica.Jones@nowhere.com", 1, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Luke Cage", "lukeisthebest@nowhere.com", 1, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Matt Smith", "sirmatty@nowhere.com", 4, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Johnny Appleseed", "JohnnymyBoy@nowhere.com", 5, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Dig Doug", "wananaDoug@nowhere.com", 3, 60611);
 
 
-
-=======
->>>>>>> 5556fd817268883a4a10e4c538f92257730c7c44
