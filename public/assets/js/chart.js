@@ -7,7 +7,7 @@ google.charts.setOnLoadCallback(drawRegionsMap);
 
 function drawRegionsMap() {
     var data = google.visualization.arrayToDataTable([
-        ['State', 'Procedure Cost'],
+        ['State', 'Average Cost Procedure'],
         ['Alabama', 100000],
         ['AK', 130000],
         ['AZ', 110000],
@@ -78,7 +78,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
     var data = google.visualization.arrayToDataTable([
-        ['State', 'Low', 'High'], //!!!!switch from High to Low
+        ['State', 'High', 'Low'],
         ['Alabama', 100000, 500000],
         ['AK', 130000, 400000],
         ['AZ', 110000, 400000],
@@ -158,7 +158,7 @@ google.charts.setOnLoadCallback(drawMarkersMap);
 
 function drawMarkersMap() {
     var data = google.visualization.arrayToDataTable([
-        ['Address', 'Procedure Cost'],
+        ['Hospital', 'Procedure Cost'],
         ['2160 S 1ST AVENUE MAYWOOD', 100000],
         ['4440 W 95TH STREET OAK LAWN', 200000],
         ['251 E HURON ST CHICAGO', 150000],
@@ -168,7 +168,7 @@ function drawMarkersMap() {
         ['400 MAPLE SUMMIT ROAD JERSEYVILLE', 150000],
         ['1304 FRANKLIN AVENUE NORMAL', 300000],
         ]);
-    
+
     var options = {
         region: 'US-IL',
         displayMode: 'markers',
