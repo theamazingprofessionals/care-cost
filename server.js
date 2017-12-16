@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 8080;
+const path = require("path")
 
 // Requiring our models for syncing
 const db = require("./models");
@@ -18,7 +19,21 @@ app.use(bodyParser.json({
 }));
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public'), {
+    index: false,
+    extensions: ['html']
+}));
+
+
+
+//just for testing ajax calls temporarily
+app.get('/', function (req, res) {
+    res.sendFile('test.html', {
+        root: __dirname + "/public"
+    });
+});
+
+
 
 //handlebars 
 app.engine("handlebars", exphbs({
