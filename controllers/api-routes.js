@@ -8,8 +8,6 @@ const helpers = require("./helpers/helpers")
 
 //once we have a better idea of the exactly how the front end is gonna function we should probably also consider sending some data along with the req.body instead of relying on params so heavily
 
-
-
 module.exports = function (app) {
 
     //all procedures
@@ -18,6 +16,8 @@ module.exports = function (app) {
             res.json(result);
         });
     });
+
+    //all procedures by id
 
     app.get('/api/procedures/:id', function (req, res) {
         db.Procedure.findAll({
@@ -55,7 +55,7 @@ module.exports = function (app) {
     //all costs by id and state
     app.get("/api/cost/:id/:state", function (req, res) {
         db.Cost.findAll({
-            order: [['hospitalCharges', 'DESC']],
+            //            order: [['hospitalCharges', 'DESC']],
             where: {
                 ProcedureProcedureId: req.params.id,
             },
@@ -67,10 +67,10 @@ module.exports = function (app) {
             }],
 
         }).then(function (result) {
+            console.log(result.length);
             res.json(result);
         });
     });
-
 
 
     //get state wide average cost for a given procedure using the 'stateCostAverage' helper function
@@ -83,7 +83,7 @@ module.exports = function (app) {
             include: [{
                 model: db.Provider,
                 attributes: ['state']
-            }],
+            }]
         }).then(function (result) {
             result = helpers.stateCostAverages(result)
             res.json(result);
@@ -129,7 +129,11 @@ module.exports = function (app) {
         })
     });
 
+
 }
+
+
+
 
 //// examples ////
 
