@@ -13,28 +13,26 @@
 INSERT IGNORE INTO medical_cost_db.provider_Info (
 	providerId, providerName, address, city, state, zipCode, region
 )
-SELECT provider_id, provider_name, street_address, city, state, zip_code, region
+SELECT provider_id, provider_name, address, city, state, zip_code, region
 FROM medical_cost_db.medicare_data;
 
 
 
 INSERT IGNORE INTO medical_cost_db.procedure_Name (
-	procedureId, drgDefinition, procedureName
+	drgDefinition, procedureId, procedureName
 )
-SELECT procedure_id, drg_definition, procedure_name 
+SELECT drg_definition, procedure_id, procedure_name 
 FROM medical_cost_db.medicare_data;
 
-
-
-//sequelize associates will 
 
 INSERT INTO medical_cost_db.cost_Data(
-	patientPayments, ProviderProviderId, ProcedureProcedureId
+    patientPayments, ProviderProviderId, ProcedureProcedureId, hospitalCharges, medicarePayments, totalPayments
 )
-SELECT patient_payments, provider_id, procedure_id
+SELECT patient_oop_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_totalPayments
 FROM medical_cost_db.medicare_data;
 
 
+<<<<<<< HEAD
 INSERT INTO medical_cost_db.cost_Data(
 	patientPayments, ProviderProviderId, ProcedureProcedureId, hospitalCharges, medicarePayments, totalPayments
 )
@@ -44,3 +42,5 @@ FROM medical_cost_db.medicare_data;
 
 
 
+=======
+>>>>>>> 5556fd817268883a4a10e4c538f92257730c7c44
