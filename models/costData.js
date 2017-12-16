@@ -1,5 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     let Cost = sequelize.define('Cost', {
+<<<<<<< HEAD
         //        providerId: {
         //            type: DataTypes.INTEGER(11),
         //            allowNull: false,
@@ -32,14 +33,28 @@ module.exports = function (sequelize, DataTypes) {
         },
         totalPayments:{
             type: DataTypes.DECIMAL(10,2), 
+=======
+        patientPayments: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false,
+        },
+        hospitalCharges: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false,
+        },
+        medicarePayments: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false,
+        },
+        totalPayments: {
+            type: DataTypes.DECIMAL(10, 2),
+>>>>>>> 5556fd817268883a4a10e4c538f92257730c7c44
             allowNull: false,
         }
     }, {
         timestamps: false,
         tableName: "cost_Data"
     });
-
-
 
     Cost.associate = function (models) {
         models.Cost.belongsTo(models.Provider, {
@@ -52,5 +67,3 @@ module.exports = function (sequelize, DataTypes) {
 
     return Cost
 };
-
-//we'll have to add the associations later!
