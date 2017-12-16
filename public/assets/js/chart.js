@@ -1,3 +1,130 @@
+// Heart Transplant Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['Pennsylvania', 2794182],
+        ['Arizona', 382051],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Heart Transplant',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('heart_transplant'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
+// Coranary Bypass Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['California', 439113],
+        ['Maryland', 30888],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Coronary Bypass',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('coronary_bypass'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+// Gall Bladder Removal Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['Florida', 126311],
+        ['Arizona', 8681],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Gall Bladder Removal',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('gall_bladder'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
+// Spinal Fusion Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['California', 436765],
+        ['New York', 15105],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Spinal Fusion',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('spinal_fusion'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
 //US Map Average Cost of Procedure Visualization
 google.charts.load('current', {
     'packages':['geochart'],
