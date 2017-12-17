@@ -1,50 +1,50 @@
 .header {
-	color: white;
-	font-family: 'Playfair Display', serif;
-	font-size: 35px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
 
 }
 
 .sidebar {
-	float: right;
-	height: 50%;
-	width: 25%;
-	font-family: 'Playfair Display', serif;
-	font-size: 20px;
-	color: white;
-	border-left: 8px solid white;
-	position: relative;
+    float: right;
+    height: 50%;
+    width: 25%;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: white;
+    border-left: 8px solid white;
+    position: relative;
 
 }
 
 .wrapper {
-	margin-left: 5%;
-	margin-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 h1 {
-	-webkit-margin-after: 0.1em;
+    -webkit-margin-after: 0.1em;
 }
 
 h2 {
-	padding-top: 0px;
-	-webkit-margin-before: 0em;
+    padding-top: 0px;
+    -webkit-margin-before: 0em;
 }
 
 body {
-	background-color: #008bcc;
+    background-color: #008bcc;
 }
 
 select {
-	background-color: black;
-	color: white;
-	font-family: 'Playfair Display', serif;
-	font-size: 20px;
+    background-color: black;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
 }
 
 button {
-	background-color: black;
-	color: white;
-	font-family: 'Playfair Display', serif;
-	font-size: 20px;
+    background-color: black;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
 }
