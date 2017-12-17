@@ -76,22 +76,22 @@ module.exports = function (app) {
     });
 
 
-    //get state wide average cost for a given procedure using the 'stateCostAverage' helper function
-    //    app.get("/api/avg/:id", function (req, res) {
-    //        db.Cost.findAll({
-    //            where: {
-    //                ProcedureProcedureId: req.params.id,
-    //            },
-    //            attributes: ['ProcedureProcedureId', 'hospitalCharges'],
-    //            include: [{
-    //                model: db.Provider,
-    //                attributes: ['state']
-    //            }]
-    //        }).then(function (result) {
-    //            result = helpers.stateCostAverages(result)
-    //            res.json(result);
-    //        });
-    //    });
+    //    get state wide average cost for a given procedure using the 'stateCostAverage' helper function
+    app.get("/api/avg/:id", function (req, res) {
+        db.Cost.findAll({
+            where: {
+                ProcedureProcedureId: req.params.id,
+            },
+            attributes: ['ProcedureProcedureId', 'hospitalCharges'],
+            include: [{
+                model: db.Provider,
+                attributes: ['state']
+                }]
+        }).then(function (result) {
+            result = helpers.stateCostAverages(result)
+            res.json(result);
+        });
+    });
 
 
     //get country wide min/max costs for a given procedure
@@ -132,6 +132,7 @@ module.exports = function (app) {
         })
     });
 
+
     //test handlebars route    
     app.get("/api/avg/:id", function (req, res) {
         db.Cost.findAll({
@@ -153,6 +154,7 @@ module.exports = function (app) {
         });
     });
 }
+
 
 
 //// examples ////
