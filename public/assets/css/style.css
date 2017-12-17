@@ -48,3 +48,28 @@ button {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
 }
+
+/*from the front_end branch*/
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.top-buffer-header {
+    margin-top: 200px;
+}
+
+body {
+    background: #25407B;
+}
+
+.container {
+    background: white;
+}
+
+.btn-default {
+    background-color: #DCE5F9;
+    font-weight: bold;
+    color: #13203E;
+    border-color: #3D6ACC;
+}
