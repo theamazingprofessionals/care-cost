@@ -27,11 +27,11 @@ module.exports = {
             results.push({
                 state: state,
                 averageCost: average,
-                procId: [queryResults[0].ProcedureProcedureId]
+                procId: queryResults[0].ProcedureProcedureId
             });
         };
 
-        results.sort((obj1, obj2) => obj2["average cost"] - obj1["average cost"])
+        results.sort((obj1, obj2) => obj2["averageCost"] - obj1["averageCost"])
         return results;
     },
 
