@@ -1,14 +1,12 @@
-
-    
-<div class="list-div">
-    
-<ul>
-
-    {{#each state}}
-    <li><button class="btn btn-secondary btn-sm">{{{state}}}</button></li>{{/each}}
+<header>
+    <h1 class="text-center">This is the main page</h1>
+</header>
 
 
-
-</ul>    
-    
+<div id="list-div">
+    <ul>
+        {{#each names}}
+        <li><button class="btn btn-secondary btn-sm proc_id" data-id="{{this.procedureId}}">{{this.procedureName}}</button></li>
+        {{/each}}
+    </ul>
 </div>

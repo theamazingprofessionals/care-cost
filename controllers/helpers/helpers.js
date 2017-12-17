@@ -6,6 +6,7 @@ module.exports = {
     //needed to transform the return into a sortable array to make displaying rankings on the front end easier 
     //Probably a much more performant way to do this!
     stateCostAverages: queryResults => {
+        console.log(queryResults)
         const averages = {};
         let results = []
         queryResults.forEach(e => {
@@ -25,7 +26,8 @@ module.exports = {
             averages[state] = average;
             results.push({
                 state: state,
-                'average cost': average
+                averageCost: average,
+                procId: [queryResults[0].ProcedureProcedureId]
             });
         };
 
