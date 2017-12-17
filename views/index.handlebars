@@ -1,18 +1,30 @@
-<header>
-    <h1 class="text-center">This is the main page</h1>
-</header>
+<div class="container">
+
+    <div class="page-header">
+        <h1>Healthcare <small>Procedure Cost Variations</small></h1>
+    </div>
+    <div class="row">
+        <!-- 	<div class="col-md-2">
+		<div id="heart_transplant"></div>
+	</div>
+	<div class="col-md-2">
+		<div id="coronary_bypass"></div>
+	</div> -->
+        <div class="col-md-6">
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur. Praesent vitae placerat turpis. Nunc vitae est eu leo cursus ultrices. Sed condimentum at ligula sit amet pretium. Nullam felis quam, venenatis at tincidunt eu, cursus id tortor. Praesent et erat at magna facilisis ultricies et et nunc.</p>
+
+            <h5 class="top-buffer">Choose a procedure to view the vast difference of cost between states in the US.</h5>
 
 
-<div id="procs-div">
-    <ul>
-        {{#each names}}
-        <li><button class="btn btn-default btn-sm proc-btn" data-id="{{this.procedureId}}">{{this.procedureName}}</button></li>
-        {{/each}}
-    </ul>
-</div>
+            <div class="col-md-6">
+                <div id="spinal_fusion"></div>
+            </div>
+        </div>
 
+        <div id="procs-div">
+            {{#each names}}
+            <div><button class="btn btn-default btn-sm proc-btn" data-id="{{this.procedureId}}">{{this.procedureName}}</button></div>
+            {{/each}}
+        </div>
 
-
-
-<div id="list-div">
-</div>
+        <div id="list-div"></div>

@@ -1,8 +1,6 @@
 const db = require("../models");
 const helpers = require("./helpers/helpers")
 
-//once we have a better idea of the exactly how the front end is gonna function we should probably also consider sending some data along with the req.body instead of relying on params so heavily
-
 module.exports = function (app) {
 
     app.get("/", function (req, res) {
@@ -56,7 +54,7 @@ module.exports = function (app) {
 
 
     //all costs by id and state
-    app.get("/api/cost/:id/:state", function (req, res) {
+    app.get("/api/cost/:state/:id", function (req, res) {
         db.Cost.findAll({
             where: {
                 ProcedureProcedureId: req.params.id,
@@ -69,8 +67,9 @@ module.exports = function (app) {
             }],
 
         }).then(function (result) {
-            console.log(result.length);
             res.json(result);
+
+
         });
     });
 
