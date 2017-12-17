@@ -21,7 +21,7 @@ FROM medical_cost_db.medicare_data;
 INSERT IGNORE INTO medical_cost_db.procedure_Name (
 	drgDefinition, procedureId, procedureName
 )
-SELECT drg_definition, procedure_id, procedure_name 
+SELECT drg, procedure_id, procedure_name 
 FROM medical_cost_db.medicare_data;
 
 
