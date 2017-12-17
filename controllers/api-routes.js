@@ -1,14 +1,18 @@
 const db = require("../models");
 const helpers = require("./helpers/helpers")
 
-
-//just so i don't forget to ask someone tomorrow.. 
-//I'm not sure whats better, writing very specific routes to get more granial data using helper functions here in the controllers, or writing more general routes and then filtering as needed with our helpers on the client inside of our ajax calls??
-//seems like it'd be less repetitive on the client, but either way we can move stuff around pretty easily
-
 //once we have a better idea of the exactly how the front end is gonna function we should probably also consider sending some data along with the req.body instead of relying on params so heavily
 
 module.exports = function (app) {
+
+    app.get("/", function (req, res) {
+        db.Procedure.findAll({}).then(function (result) {
+            let hbsObject = {
+                names: result
+            };
+            res.render("index", hbsObject)
+        })
+    })
 
     //all procedures
     app.get('/api/procedures', function (req, res) {
@@ -17,7 +21,7 @@ module.exports = function (app) {
         });
     });
 
-    //all procedures by id
+ //all procedures by id
 
     app.get('/api/procedures/:id', function (req, res) {
         db.Procedure.findAll({
@@ -55,7 +59,6 @@ module.exports = function (app) {
     //all costs by id and state
     app.get("/api/cost/:id/:state", function (req, res) {
         db.Cost.findAll({
-            //            order: [['hospitalCharges', 'DESC']],
             where: {
                 ProcedureProcedureId: req.params.id,
             },
@@ -74,21 +77,21 @@ module.exports = function (app) {
 
 
     //get state wide average cost for a given procedure using the 'stateCostAverage' helper function
-    app.get("/api/avg/:id", function (req, res) {
-        db.Cost.findAll({
-            where: {
-                ProcedureProcedureId: req.params.id,
-            },
-            attributes: ['ProcedureProcedureId', 'hospitalCharges'],
-            include: [{
-                model: db.Provider,
-                attributes: ['state']
-            }]
-        }).then(function (result) {
-            result = helpers.stateCostAverages(result)
-            res.json(result);
-        });
-    });
+    //    app.get("/api/avg/:id", function (req, res) {
+    //        db.Cost.findAll({
+    //            where: {
+    //                ProcedureProcedureId: req.params.id,
+    //            },
+    //            attributes: ['ProcedureProcedureId', 'hospitalCharges'],
+    //            include: [{
+    //                model: db.Provider,
+    //                attributes: ['state']
+    //            }]
+    //        }).then(function (result) {
+    //            result = helpers.stateCostAverages(result)
+    //            res.json(result);
+    //        });
+    //    });
 
 
     //get country wide min/max costs for a given procedure
@@ -129,10 +132,27 @@ module.exports = function (app) {
         })
     });
 
-
+    //test handlebars route    
+    app.get("/api/avg/:id", function (req, res) {
+        db.Cost.findAll({
+            where: {
+                ProcedureProcedureId: req.params.id,
+            },
+            attributes: ['ProcedureProcedureId', 'hospitalCharges'],
+            include: [{
+                model: db.Provider,
+                attributes: ['state']
+            }]
+        }).then(function (result) {
+            console.log(result)
+            result = helpers.stateCostAverages(result)
+            res.json(result)
+            //            res.render("list", {
+            //                state: result
+            //            })
+        });
+    });
 }
-
-
 
 
 //// examples ////
