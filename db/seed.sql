@@ -76,4 +76,29 @@ INSERT INTO medical_cost_db_updated.cost_Data(
 SELECT patient_oop_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_totalPayments
 FROM medical_cost_db_updated.medicare_data;
 
+001: A heart transplant is the surgical transplant procedure performed on patients with end-stage heart failure or severe coronary artery disease
+
+Includes all heart transplant procedures and implantation of ventricular assist devices with major complications and comorbidities
+
+Heart Transplant or implanting a ventricular assist device with Major Complications or Comorbidities
+
+004: Includes all tracheostomy procedures with mechanical ventilation that is performed for over 4 days without a major operating room procedure, or a principal diagnosis, excluding face, mouth, and neck disorders, without a major operating room procedure. 
+
+Tracheostomy with Mechanical Ventilation for 96+ Hours or Principal Diagnosis Except Face, Mouth and Neck Disorders without Major O.R. Procedure
+
+236: Includes all coronary bypass procedures without the need of a heart catheter and without any major complications. 
+
+Coronary Bypass without Cardiac Catheterization without major complications
+
+419: Includes all laparoscopic cholecystectomy procedures without common duct exploration and with out complications and comorbidities.
+
+Laparoscopic Cholecystectomy without common duct exploration without complications and Comorbidities 
+460: Includes all spinal fusions, not including cervical, and generally does not involve large deformity corrections, tumors, or major fracture repair.
+
+spine fusion, not including cervical, and is characteristically the basic code utilized
+for spinal fusion for our patient base that does not involve large deformity corrections, tumors or
+major fracture repair
+470: Includes all hip and knee replacement procedures without major complications, as well as any reattachment of the leg, ankle or foot without major complications.
+
+Hip and knee replacements 
 
