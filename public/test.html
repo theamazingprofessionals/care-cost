@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Title</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="assets/css/style.css" rel="stylesheet" title="Default Style">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="assets/js/chart.js"></script>
+<script src="assets/js/heart_transplant.js"></script>
+<script src="assets/js/coronary_bypass.js"></script>
+<script src="assets/js/gall_bladder.js"></script>
+<script src="assets/js/spinal_fusion.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+	<div class="container">
+
+
+		<div class="page-header">
+			<h1>Healthcare <small>Procedure Cost Variations</small></h1>
+		</div>
+
+		<div class="row">
+<!-- 	<div class="col-md-2">
+		<div id="heart_transplant"></div>
+	</div>
+	<div class="col-md-2">
+		<div id="coronary_bypass"></div>
+	</div> -->
+	<div class="col-md-6">
+		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur. Praesent vitae placerat turpis. Nunc vitae est eu leo cursus ultrices. Sed condimentum at ligula sit amet pretium. Nullam felis quam, venenatis at tincidunt eu, cursus id tortor. Praesent et erat at magna facilisis ultricies et et nunc.</p>
+
+		<h5 class="top-buffer">Choose a procedure to view the vast difference of cost between states in the US.</h5>
+
+
+		<div class="row top-buffer">
+
+			<div class="col-md-6">
+				<a class="btn btn-default btn-block" href="#procedureAnchor" role="button">Heart Transplant</a>
+			</div>
+			<div class="col-md-6">
+				<a class="btn btn-default btn-block" href="#procedureAnchor" role="button">Tracheotomy</a>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-md-6">
+				<a class="btn btn-default btn-block" href="#procedureAnchor" role="button">Coronary Bypass</a>
+			</div>
+			<div class="col-md-6">
+				<a class="btn btn-default btn-block" href="#procedureAnchor" role="button">Gallbladder Removal</a>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<div class="col-md-6">
+				<a class="btn btn-default btn-block" href="#procedureAnchor" role="button">Spinal Fusion</a>
+			</div>
+			<div class="col-md-6">
+				<a class="btn btn-default btn-block" href="#procedureAnchor" role="button">Hip or Knee Replacement</a>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="col-md-3">
+		<div id="gall_bladder"></div>
+	</div> -->
+	<div class="col-md-6">
+		<div id="spinal_fusion"></div>
+	</div>
+
+
+
+</div>
+
+<div class="page-header top-buffer-header">
+	<a name="procedureAnchor" id="procedureAnchor"></a>
+	<h1>Heart Transplant <small>Procedure Cost by State</small></h1>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur. Praesent vitae placerat turpis. Nunc vitae est eu leo cursus ultrices. </p>
+
+		<div id="map" style="width: 750px; height: 500px;"></div>
+
+	</div>
+	<div class="col-md-4">
+		<h2 class="text-center">State Ranking</h2>
+		<img class="center-block" src="jank.jpg">
+	</div>
+	<div class="col-md-8">
+
+	</div>	
+
+</div>
+
+
+<div class="page-header top-buffer-header">
+	<h1>Illinois <small>Procedure Cost by Hospital</small></h1>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur. Praesent vitae placerat turpis. Nunc vitae est eu leo cursus ultrices.</p>
+
+
+		<div id="state_map" style="width: 750px; height: 500px;"></div>
+
+	</div>
+	<div class="col-md-4">
+		<h2 class="text-center">Hospital Ranking</h2>
+		<img class="center-block" src="jank.jpg">
+	</div>
+	
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="state_bar"></div>
+
+</div><!-- end container div -->
+
+<script src="assets/js/calls.js"></script>
+<script src="assets/js/animation.js"></script>
+
+</body>
+
+
+
+
+</html>

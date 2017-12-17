@@ -1,50 +1,18 @@
-.header {
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 35px;
+	.top-buffer { margin-top:20px; }
 
-}
+	.top-buffer-header { margin-top:200px; }
 
-.sidebar {
-    float: right;
-    height: 50%;
-    width: 25%;
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: white;
-    border-left: 8px solid white;
-    position: relative;
+	body {
+		background: #25407B;
+	}
 
-}
+	.container {
+		background: white;
+	}
 
-.wrapper {
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-h1 {
-    -webkit-margin-after: 0.1em;
-}
-
-h2 {
-    padding-top: 0px;
-    -webkit-margin-before: 0em;
-}
-
-body {
-    background-color: #008bcc;
-}
-
-select {
-    background-color: black;
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-}
-
-button {
-    background-color: black;
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-}
+	.btn-default {
+		background-color: #DCE5F9;
+		font-weight: bold;
+		color: #13203E;
+		border-color: #3D6ACC;
+	}
