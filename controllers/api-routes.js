@@ -106,7 +106,7 @@ module.exports = function (app) {
             }],
             order: [['hospitalCharges', 'DESC']]
         }).then(function (result) {
-            console.log("before helper", result)
+            //console.log("before helper", result)
             result = helpers.costMinMax(result)
             res.json(result)
         })
