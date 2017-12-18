@@ -3,6 +3,7 @@ $(function () {
     function getRankedStateList(procId) {
 
         $.get('/api/avg/' + procId).then(function (data) {
+            console.log(data);
             let list = "<ol>{{#each data}}<li><button class='state-select' data-state='{{this.state}}' data-id='{{this.procId}}'>{{this.state}}</button></li>{{/each}}</ol>";
             let compiledTemplate = Handlebars.compile(list);
             let html = compiledTemplate({
