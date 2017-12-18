@@ -38,7 +38,7 @@ INSERT INTO medical_cost_db.cost_Data(
 SELECT patient_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_total_payments
 FROM medical_cost_db.medicare_data;
 
-CREATE TABLE medical_cost_db.patient_data
+CREATE TABLE patient_data
 (
 	patientId INT NOT NULL AUTO_INCREMENT, 
 	name VARCHAR(255) NOT NULL,
@@ -106,3 +106,41 @@ mysql://xhyn6i1v63lp0x71:voxzfc0seei74ntx@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-
 
 mysql -h dyud5fa2qycz1o3v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	 -u t2igeqq5umlz86cu -pxa3v69sohv3t2duv ty85u50i6apx0b70 < medical_cost_db_updated_medicare_data.sql
 
+INSERT IGNORE INTO ty85u50i6apx0b70.provider_Info (
+	providerId, providerName, address, city, state, zipCode, region
+)
+SELECT provider_id, provider_name, address, city, state, zip_code, region
+FROM ty85u50i6apx0b70.medicare_data;
+
+
+INSERT IGNORE INTO ty85u50i6apx0b70.procedure_Name (
+	drgDefinition, procedureId, procedureName
+)
+SELECT drg, procedure_id, procedure_name 
+FROM ty85u50i6apx0b70.medicare_data;
+
+
+INSERT INTO ty85u50i6apx0b70.cost_Data(
+    patientPayments, ProviderProviderId, ProcedureProcedureId, hospitalCharges, medicarePayments, totalPayments
+)
+SELECT patient_oop_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_totalPayments
+FROM ty85u50i6apx0b70.medicare_data;
+
+USE ty85u50i6apx0b70;
+
+CREATE TABLE patient_data
+(
+	patientId INT NOT NULL AUTO_INCREMENT, 
+	name VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL, 
+	healthScore INT NOT NULL, 
+	zipCode INT NOT NULL,
+	PRIMARY KEY (patientId)
+);
+
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Jim Jones", "Jim.Jones@nowhere.com", 3, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Jessica Jones", "Jessica.Jones@nowhere.com", 1, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Luke Cage", "lukeisthebest@nowhere.com", 1, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Matt Smith", "sirmatty@nowhere.com", 4, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Johnny Appleseed", "JohnnymyBoy@nowhere.com", 5, 60611);
+INSERT INTO patient_data (name, email, healthScore, zipCode) VALUES ("Dig Doug", "wananaDoug@nowhere.com", 3, 60611);
