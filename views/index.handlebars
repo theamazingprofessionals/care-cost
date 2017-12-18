@@ -12,55 +12,59 @@
 
             <h5 class="top-buffer">Choose a procedure to view the vast difference of cost between states in the US.</h5>
 
-                <div class="col-md-12" id="procs-div">
-                    {{#each names}}
-                        <div class="col-md-6 top-buffer"><a class="btn btn-default btn-block proc-btn" href="#procedureAnchor" role="button" data-id="{{this.procedureId}}">{{this.procedureName}}</a></div>
-                    {{/each}}
-                </div>
+            <div class="col-md-12" id="procs-div">
+                {{#each names}}
+                <div class="col-md-6 top-buffer"><a class="btn btn-default btn-block proc-btn" href="#procedureAnchor" role="button" data-id="{{this.procedureId}}">{{this.procedureName}}</a></div>
+                {{/each}}
+            </div>
         </div>
 
 
         <div class="col-md-6">
-            <div id="min-max"></div>
+            <canvas id="min-max"></canvas>
         </div>
 
     </div>
 
 
     <div class="page-header top-buffer-header">
-    <a name="procedureAnchor" id="procedureAnchor"></a>
-    <h1>Heart Transplant <small>Procedure Cost by State</small></h1>
+        <a name="procedureAnchor" id="procedureAnchor"></a>
+        <h1>Heart Transplant <small>Procedure Cost by State</small></h1>
     </div>
 
     <div class="row">
 
-    <div id="one" class="col-md-8">
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur.</p>
+        <div id="one" class="col-md-8">
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur.</p>
 
 
-    <div id="map" style="width: 750px; height: 500px;"></div>
-    </div> <!-- end one -->
+            <div id="map" style="width: 750px; height: 500px;"></div>
+        </div>
+        <!-- end one -->
 
-    <div class="col-md-4">
-    <h2 class="text-center">State Ranking</h2>
-    <div id="rank">
+        <div class="col-md-4">
+            <h2 class="text-center">State Ranking</h2>
+            <div id="rank">
 
-    <div id="list-div">
+                <div id="list-div">
+                </div>
+            </div>
+        </div>
+        <!-- end col-md-4 -->
     </div>
+    <!-- end row -->
+    <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+            <a href="#topAnchor">Back to Top</a>
+        </div>
     </div>
-    </div> <!-- end col-md-4 -->
-    </div> <!-- end row -->
-<div class="row">
-<div class="col-md-2 col-md-offset-10">
-<a href="#topAnchor">Back to Top</a>
-</div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
-</div> <!-- end container -->
+</div>
+<!-- end container -->
