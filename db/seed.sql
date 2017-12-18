@@ -76,7 +76,7 @@ INSERT INTO medical_cost_db_updated.cost_Data(
 SELECT patient_oop_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_totalPayments
 FROM medical_cost_db_updated.medicare_data;
 
-001: A heart transplant is the surgical transplant procedure performed on patients with end-stage heart failure or severe coronary artery disease
+001: A heart transplant is the surgical transplant procedure performed on patients with end-stage heart failure or severe coronary artery disease. 
 
 Includes all heart transplant procedures and implantation of ventricular assist devices with major complications and comorbidities
 
