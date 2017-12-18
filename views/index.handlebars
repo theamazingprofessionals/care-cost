@@ -17,13 +17,13 @@
 
 
             <div class="col-md-6">
-                <div id="spinal_fusion"></div>
+                <div id="min-max"></div>
             </div>
         </div>
 
         <div id="procs-div">
             {{#each names}}
-            <div><button class="btn btn-default btn-sm proc-btn" data-id="{{this.procedureId}}">{{this.procedureName}}</button></div>
+            <div><button class="btn btn-default btn-sm proc-btn" data-id="{{this.procedureId}}" data-name="{{this.procedureName}}">{{this.procedureName}}</button></div>
             {{/each}}
         </div>
 
