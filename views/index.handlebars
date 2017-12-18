@@ -14,7 +14,7 @@
 
             <div class="col-md-12" id="procs-div">
                 {{#each names}}
-                <div class="col-md-6 top-buffer"><a class="btn btn-default btn-block proc-btn" href="#procedureAnchor" role="button" data-id="{{this.procedureId}}">{{this.procedureName}}</a></div>
+                <div class="col-md-6 top-buffer"><a class="btn btn-default btn-block proc-btn" href="#procedureAnchor" role="button" data-id="{{this.procedureId}}" data-name="{{this.procedureName}}">{{this.procedureName}}</a></div>
                 {{/each}}
             </div>
         </div>
