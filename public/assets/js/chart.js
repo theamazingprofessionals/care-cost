@@ -1,133 +1,6 @@
-// Heart Transplant Chart of Highest and Lowest Cost in US
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['State', 'Procedure Cost'],
-        ['Pennsylvania', 2794182],
-        ['Arizona', 382051],
-
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Heart Transplant',
-            subtitle: 'Highest and Lowest Cost of Procedure in US',
-          },
-          bars: 'vertical',
-                  bar: {groupWidth: "50%"},
-
-
-          vAxis: {format: 'decimal'},
-          height: 600,
-          width: 400,
-          colors: ['#4374e0']
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('heart_transplant'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-
-// Coranary Bypass Chart of Highest and Lowest Cost in US
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['State', 'Procedure Cost'],
-        ['California', 439113],
-        ['Maryland', 30888],
-
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Coronary Bypass',
-            subtitle: 'Highest and Lowest Cost of Procedure in US',
-          },
-          bars: 'vertical',
-                  bar: {groupWidth: "50%"},
-
-
-          vAxis: {format: 'decimal'},
-          height: 600,
-          width: 400,
-          colors: ['#4374e0']
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('coronary_bypass'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-// Gall Bladder Removal Chart of Highest and Lowest Cost in US
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['State', 'Procedure Cost'],
-        ['Florida', 126311],
-        ['Arizona', 8681],
-
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Gall Bladder Removal',
-            subtitle: 'Highest and Lowest Cost of Procedure in US',
-          },
-          bars: 'vertical',
-                  bar: {groupWidth: "50%"},
-
-
-          vAxis: {format: 'decimal'},
-          height: 600,
-          width: 400,
-          colors: ['#4374e0']
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('gall_bladder'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-
-// Spinal Fusion Chart of Highest and Lowest Cost in US
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['State', 'Procedure Cost'],
-        ['California', 436765],
-        ['New York', 15105],
-
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Spinal Fusion',
-            subtitle: 'Highest and Lowest Cost of Procedure in US',
-          },
-          bars: 'vertical',
-                  bar: {groupWidth: "50%"},
-
-
-          vAxis: {format: 'decimal'},
-          height: 600,
-          width: 400,
-          colors: ['#4374e0']
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('spinal_fusion'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-
 //US Map Average Cost of Procedure Visualization
 google.charts.load('current', {
-    'packages':['geochart'],
+    'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
 });
 google.charts.setOnLoadCallback(drawRegionsMap);
@@ -192,7 +65,9 @@ function drawRegionsMap() {
         region: 'US',
         displayMode: 'regions',
         resolution: 'provinces',
-        colorAxis: {colors: ['#dee1e5', '#4374e0']} // gray to blue
+        colorAxis: {
+            colors: ['#dee1e5', '#4374e0']
+        } // gray to blue
     };
     var chart = new google.visualization.GeoChart(document.getElementById('map'));
     chart.draw(data, options);
@@ -200,7 +75,9 @@ function drawRegionsMap() {
 
 // All States High vs Low Procedure Cost Bar Graph
 
-google.charts.load('current', {'packages':['bar']});
+google.charts.load('current', {
+    'packages': ['bar']
+});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
@@ -260,25 +137,27 @@ function drawChart() {
         ]);
 
     var options = {
-      chart: {
-        title: 'Procedure',
-        subtitle: 'High and Low Cost of Procedure by State',
-    },
-    bars: 'horizontal',
-    vAxis: {format: 'decimal'},
-    height: 800,
-    width: 900,
-    colors: ['#dee1e5', '#4374e0']
-};
+        chart: {
+            title: 'Procedure',
+            subtitle: 'High and Low Cost of Procedure by State',
+        },
+        bars: 'horizontal',
+        vAxis: {
+            format: 'decimal'
+        },
+        height: 800,
+        width: 900,
+        colors: ['#dee1e5', '#4374e0']
+    };
 
-var chart = new google.charts.Bar(document.getElementById('state_bar'));
+    var chart = new google.charts.Bar(document.getElementById('state_bar'));
 
-chart.draw(data, google.charts.Bar.convertOptions(options));
+    chart.draw(data, google.charts.Bar.convertOptions(options));
 };
 
 // Procedure cost by hospital in state
 google.charts.load('current', {
-    'packages':['geochart'],
+    'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
 });
 google.charts.setOnLoadCallback(drawMarkersMap);
@@ -300,7 +179,9 @@ function drawMarkersMap() {
         region: 'US-IL',
         displayMode: 'markers',
         resolution: 'provinces',
-        colorAxis: {colors: ['#dee1e5', '#4374e0']} // gray to blue
+        colorAxis: {
+            colors: ['#dee1e5', '#4374e0']
+        } // gray to blue
     };
     var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
     chart.draw(data, options);
