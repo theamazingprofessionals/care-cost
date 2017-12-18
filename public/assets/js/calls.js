@@ -81,11 +81,11 @@ $(function () {
     })
 
     //disable page scrolling while mouse is in the list-div. prevents page from moving 
-//    $(document).on('mousewheel DOMMouseScroll', "#list-div", function (e) {
-//    var e0 = e.originalEvent,
-//        delta = e0.wheelDelta || -e0.detail;
-//
-//    this.scrollTop += (delta < 0 ? 1 : -1) * 30;
-//    e.preventDefault();
-//    });
-//    });
+    $(document).on('mousewheel DOMMouseScroll', "#list-div", function (e) {
+    var e0 = e.originalEvent,
+        delta = e0.wheelDelta || -e0.detail;
+
+    this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+    e.preventDefault();
+    });
+    });
