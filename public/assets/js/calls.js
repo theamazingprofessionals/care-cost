@@ -38,11 +38,23 @@ var procedureFinal;
         })
     }
 
+
     $(".proc-btn").on("click", function () {
         let procId = $(this).data("id");
         getProcedureName(procId);
         getRankedStateList(procId);
     });
+
+
+    $(".proc-btn").hover(function () {
+        let id = $(this).data("id");
+        let name = $(this).data("name");
+        $.get("/api/mm/" + id).then(function (data) {
+            console.log(data);
+            console.log(data[0])
+            minMaxChart(name, data[0].state, data[0].min, data[1].state, data[1].max)
+        })
+    })
 
     $(document).on("click", ".state-select", function () {
         console.log("clicked")
@@ -50,5 +62,7 @@ var procedureFinal;
         let procId = $(this).data("id");
         getStateCostData(state, procId);
     })
+
+
 
 });

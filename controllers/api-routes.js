@@ -1,6 +1,7 @@
 const db = require("../models");
 const helpers = require("./helpers/helpers")
 
+
 module.exports = function (app) {
 
     app.get("/", function (req, res) {
@@ -69,8 +70,6 @@ module.exports = function (app) {
 
         }).then(function (result) {
             res.json(result);
-
-
         });
     });
 
@@ -107,6 +106,7 @@ module.exports = function (app) {
             }],
             order: [['hospitalCharges', 'DESC']]
         }).then(function (result) {
+            console.log("before helper", result)
             result = helpers.costMinMax(result)
             res.json(result)
         })

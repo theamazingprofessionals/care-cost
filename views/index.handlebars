@@ -20,6 +20,7 @@
 				<div id="spinal_fusion"></div>
 			</div>
 
+<<<<<<< HEAD
 			<div class = "col-md-12" id="procs-div">
 				{{#each names}}
 				<div class = "col-md-4"><button class="btn btn-default btn-sm proc-btn" data-id="{{this.procedureId}}">{{this.procedureName}}</button></div>
@@ -37,4 +38,16 @@
 	</div>
 
 </div>
+=======
+            <div class="col-md-6">
+                <div id="min-max"></div>
+            </div>
+        </div>
+
+        <div id="procs-div">
+            {{#each names}}
+            <div><button class="btn btn-default btn-sm proc-btn" data-id="{{this.procedureId}}" data-name="{{this.procedureName}}">{{this.procedureName}}</button></div>
+            {{/each}}
+        </div>
+>>>>>>> c46b10671c96a8ea085fc1645e6072a50129b16c
 
