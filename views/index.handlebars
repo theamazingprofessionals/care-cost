@@ -3,28 +3,53 @@
     <div class="page-header">
         <h1>Healthcare <small>Procedure Cost Variations</small></h1>
     </div>
+
     <div class="row">
-        <!-- 	<div class="col-md-2">
-		<div id="heart_transplant"></div>
-	</div>
-	<div class="col-md-2">
-		<div id="coronary_bypass"></div>
-	</div> -->
+
         <div class="col-md-6">
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur. Praesent vitae placerat turpis. Nunc vitae est eu leo cursus ultrices. Sed condimentum at ligula sit amet pretium. Nullam felis quam, venenatis at tincidunt eu, cursus id tortor. Praesent et erat at magna facilisis ultricies et et nunc.</p>
 
             <h5 class="top-buffer">Choose a procedure to view the vast difference of cost between states in the US.</h5>
 
-
-            <div class="col-md-6">
-                <div id="min-max"></div>
-            </div>
+                <div class="col-md-12" id="procs-div">
+                    {{#each names}}
+                        <div class="col-md-6 top-buffer"><a class="btn btn-default btn-block proc-btn" href="#procedureAnchor" role="button" data-id="{{this.procedureId}}">{{this.procedureName}}</a></div>
+                    {{/each}}
+                </div>
         </div>
 
-        <div id="procs-div">
-            {{#each names}}
-            <div><button class="btn btn-default btn-sm proc-btn" data-id="{{this.procedureId}}" data-name="{{this.procedureName}}">{{this.procedureName}}</button></div>
-            {{/each}}
+
+        <div class="col-md-6">
+            <div id="min-max"></div>
         </div>
 
-        <div id="list-div"></div>
+    </div>
+
+
+    <div class="page-header top-buffer-header">
+    <a name="procedureAnchor" id="procedureAnchor"></a>
+    <h1>Heart Transplant <small>Procedure Cost by State</small></h1>
+    </div>
+
+    <div class="row">
+
+    <div id="one" class="col-md-8">
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur.</p>
+
+
+    <div id="map" style="width: 750px; height: 500px;"></div>
+    </div> <!-- end one -->
+
+    <div class="col-md-4">
+    <h2 class="text-center">State Ranking</h2>
+    <div id="rank">
+
+    <div id="list-div">
+    </div>
+    </div>
+
+    </div> <!-- end col-md-4 -->
+    </div> <!-- end row -->
+
+
+</div> <!-- end container maybe -->
