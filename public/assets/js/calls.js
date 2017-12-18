@@ -33,7 +33,7 @@ $(function () {
         $.get("/api/mm/" + id).then(function (data) {
             console.log(data);
             console.log(data[0])
-            minMaxChart(name, data[0].state, data[0].min, data[1].state, data[1].max)
+            addData(name, data[0].state, data[0].min, data[1].state, data[1].max)
         })
     })
 
@@ -43,6 +43,17 @@ $(function () {
         let procId = $(this).data("id");
         getStateCostData(state, procId);
     })
+
+
+
+    //disable page scrolling while mouse is in the list-div. prevents page from moving 
+    $(document).on('mousewheel DOMMouseScroll', "#list-div", function (e) {
+        var e0 = e.originalEvent,
+            delta = e0.wheelDelta || -e0.detail;
+
+        this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+        e.preventDefault();
+    });
 
 
 

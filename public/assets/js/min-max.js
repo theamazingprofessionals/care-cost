@@ -1,46 +1,53 @@
-// Spinal Fusion Chart of Highest and Lowest Cost in US
+const chart = $("#min-max");
 
+Chart.defaults.global.animation.duration = 200;
 
+var canvas = $("#min-max");
 
-//not sure how to get the chart to actually redraw 
-// or how to get dollar signs inserted
-
-google.charts.load('current', {
-    'packages': ['bar']
-});
-google.charts.setOnLoadCallback(drawChart);
-
-function minMaxChart(procedure, state1, num1, state2, num2) {
-    var data = google.visualization.arrayToDataTable([
-        ['State', 'Procedure Cost'],
-        [state1, "$ " + num1],
-        [state2, "$ " + num2],
-
-        ]);
-
-    var options = {
-        chart: {
-            title: procedure,
-            subtitle: 'Highest and Lowest Cost of Procedure in US',
-        },
-        bars: 'vertical',
-        bar: {
-            groupWidth: "50%"
-        },
-
-
-        vAxis: {
-            format: 'decimal'
-        },
-        height: 500,
-        width: 550,
-        colors: ['#4374e0']
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('min-max'));
-
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+var data = {
+    labels: ["Pennsylvania", "Arizona"],
+    datasets: [
+        {
+            label: "Heart Transplant",
+            data: [2794182, 382051],
+        }
+    ]
 };
 
+function addData(procedure, state1, num1, state2, num2) {
+    barChart.data.labels = [state1, state2]
+    barChart.data.datasets[0].label = [procedure]
+    barChart.data.datasets[0].data = [num1, num2];
+    barChart.update();
+}
 
-$(document).ready(minMaxChart("Heart Transplant", "Pennsylvania", 2794182, "Arizona", 382051))
+
+var barChart = Chart.Bar(canvas, {
+    data: data,
+});
+
+
+
+
+
+
+
+
+
+//                        fill: false,
+//                            lineTension: 0.1,
+//                            backgroundColor: "rgba(75,192,192,0.4)",
+//                            borderColor: "rgba(75,192,192,1)",
+//                            borderCapStyle: 'butt',
+//                            borderDash: [],
+//                            borderDashOffset: 0.0,
+//                            borderJoinStyle: 'miter',
+//                            pointBorderColor: "rgba(75,192,192,1)",
+//                            pointBackgroundColor: "#fff",
+//                            pointBorderWidth: 1,
+//                            pointHoverRadius: 5,
+//                            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+//                            pointHoverBorderColor: "rgba(220,220,220,1)",
+//                            pointHoverBorderWidth: 2,
+//                            pointRadius: 5,
+//                            pointHitRadius: 10,
