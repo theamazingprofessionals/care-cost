@@ -300,34 +300,34 @@ function drawChart() {
 //     chart.draw(data, options);
 // };
 
-google.charts.load('current', {
-    'packages': ['geochart'],
-    'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
-});
-google.charts.setOnLoadCallback(drawMarkersMap);
+// google.charts.load('current', {
+//     'packages': ['geochart'],
+//     'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
+// });
+// google.charts.setOnLoadCallback(drawMarkersMap);
 
-function drawMarkersMap() {
-    var data = google.visualization.arrayToDataTable([
-        ['Hospital', 'Procedure Cost'],
-        ['2160 S 1ST AVENUE MAYWOOD', 100000],
-        ['4440 W 95TH STREET OAK LAWN', 200000],
-        ['251 E HURON ST CHICAGO', 150000],
-        ['5841 SOUTH MARYLAND CHICAGO', 300000],
-        ['1000 HEALTH CENTER DRIVE MATTOON', 100000],
-        ['2100 MADISON AVENUE GRANITE CITY', 200000],
-        ['400 MAPLE SUMMIT ROAD JERSEYVILLE', 150000],
-        ['1304 FRANKLIN AVENUE NORMAL', 300000],
-        ]);
+// function drawMarkersMap() {
+//     var data = google.visualization.arrayToDataTable([
+//         ['Hospital', 'Procedure Cost'],
+//         ['2160 S 1ST AVENUE MAYWOOD', 100000],
+//         ['4440 W 95TH STREET OAK LAWN', 200000],
+//         ['251 E HURON ST CHICAGO', 150000],
+//         ['5841 SOUTH MARYLAND CHICAGO', 300000],
+//         ['1000 HEALTH CENTER DRIVE MATTOON', 100000],
+//         ['2100 MADISON AVENUE GRANITE CITY', 200000],
+//         ['400 MAPLE SUMMIT ROAD JERSEYVILLE', 150000],
+//         ['1304 FRANKLIN AVENUE NORMAL', 300000],
+//         ]);
 
-    var options = {
-        region: 'US-IL',
-        displayMode: 'markers',
-        resolution: 'provinces',
-        colorAxis: {
-            colors: ['#dee1e5', '#4374e0']
-        } // gray to blue
-    };
-    var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
-    chart.draw(data, options);
-};
+//     var options = {
+//         region: 'US-IL',
+//         displayMode: 'markers',
+//         resolution: 'provinces',
+//         colorAxis: {
+//             colors: ['#dee1e5', '#4374e0']
+//         } // gray to blue
+//     };
+//     var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
+//     chart.draw(data, options);
+// };
 

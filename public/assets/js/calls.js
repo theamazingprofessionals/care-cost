@@ -14,7 +14,6 @@ $(function () {
 		});
 	};
 
-
 	function getDataForMap(data, name){
 		var mapDataArray = []; 
 		mapDataArray.push(["State", 'Average Cost of Procedure']);
@@ -30,31 +29,12 @@ $(function () {
     	stateDataArray.push(["Hospital", "Procedure Cost"]);
     	var regionTemp = data[0].Provider.region;
     	var region = "US-"+ regionTemp.slice(0,2);
-    	//console.log("region " + region);
-
     	$.each(data, function(key, value){
     		stateDataArray.push([value.Provider.address + " " + value.Provider.city + " " + value.Provider.state, value.hospitalCharges]);
     	})
     	console.log(stateDataArray);
     	drawMarkersMap(stateDataArray, name, region);
     }
-
-	// function getProcedureName(procId){
-	// 	$.get('/api/procedures/' + procId).then(function(data){
-	// 		console.log(data);
-	// 		var procedure = data[0].procedureName;
-	// 		// var temp = procedure.indexOf(" ");
-	// 		// if (temp !== -1){
-	// 		// 	var temp1 = procedure.slice(0, temp);
-	// 		// 	var temp2 = procedure.slice(temp+1, procedure.length);
-	// 		// 	procedureFinal = temp1.toLowerCase() + "_" + temp2.toLowerCase();
-	// 		// }
-	// 		// else {
-	// 		// 	procedureFinal = procedure.toLowerCase();
-	// 		// }
-	// 		console.log(procedure);
-	// 	})
-	// }
 
 	function getStateCostData(state, procId) {
 		$.get("/api/cost/" + state + "/" + procId).then(function (data) {
@@ -63,14 +43,13 @@ $(function () {
 		})
 	}
 
-
 	$(".proc-btn").on("click", function () {
+		$("#title-for-map").children("h1:first").remove();
 		let procId = $(this).data("id");
 		let name = $(this).text();
 		getRankedStateList(procId, name);
+		$("#title-for-map").append("<h1>"+ name+ "<small> Procedure Cost by State</small></h1>");
 	});
-
-
 
 	$(document).on("click", ".state-select", function () {
 		console.log("clicked")
