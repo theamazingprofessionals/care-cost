@@ -1,3 +1,169 @@
+
+// Heart Transplant Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        // function getDataForMap(data, name){
+        //     $.each(data, function(key, value) {
+        //         console.log("state: " + value.state);
+        //     })
+        // }
+        function drawChart(dataFromApi, dataFromProcApi){
+            max_state = dataFromApi[0].something;
+            max_cost = dataFromApi[0].somethingCost;
+            min_state = dataFromApi[dataFromApi.length].somethingElse;
+            min_cost = dataFromApi[dataFromApi.length].somethingElseCost;
+
+            var data = google.visualization.arrayToDataTable([
+                ['State', 'Procedure Cost'],
+                [max_state, max_cost],
+                [min_state, min_cost],
+            ]);
+
+            var options = {
+              chart: {
+                title: dataFromProcApi.procedureName,
+                subtitle: 'Highest and Lowest Cost of Procedure in US',
+              },
+              bars: 'vertical',
+                      bar: {groupWidth: "50%"},
+
+
+              vAxis: {format: 'decimal'},
+              height: 600,
+              width: 400,
+              colors: ['#4374e0']
+            };
+
+        var chart = new google.charts.Bar(document.getElementById('procedure_chart'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['Pennsylvania', 2794182],
+        ['Arizona', 382051],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Heart Transplant',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('heart_transplant'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
+// Coranary Bypass Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['California', 439113],
+        ['Maryland', 30888],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Coronary Bypass',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('coronary_bypass'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+// Gall Bladder Removal Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['Florida', 126311],
+        ['Arizona', 8681],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Gall Bladder Removal',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('gall_bladder'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
+// Spinal Fusion Chart of Highest and Lowest Cost in US
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Procedure Cost'],
+        ['California', 436765],
+        ['New York', 15105],
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Spinal Fusion',
+            subtitle: 'Highest and Lowest Cost of Procedure in US',
+          },
+          bars: 'vertical',
+                  bar: {groupWidth: "50%"},
+
+
+          vAxis: {format: 'decimal'},
+          height: 600,
+          width: 400,
+          colors: ['#4374e0']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('spinal_fusion'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
+
 //US Map Average Cost of Procedure Visualization
 google.charts.load('current', {
     'packages': ['geochart'],
@@ -5,64 +171,12 @@ google.charts.load('current', {
 });
 google.charts.setOnLoadCallback(drawRegionsMap);
 
-function drawRegionsMap() {
-    var data = google.visualization.arrayToDataTable([
-        ['State', 'Average Cost Procedure'],
-        ['Alabama', 100000],
-        ['AK', 130000],
-        ['AZ', 110000],
-        ['AR', 100000],
-        ['CA', 400000],
-        ['CO', 210000],
-        ['CT', 120000],
-        ['DE', 300000],
-        ['DC', 310000],
-        ['FL', 150000],
-        ['GA', 210000],
-        ['HI', 220000],
-        ['ID', 310000],
-        ['IL', 145000],
-        ['IN', 400000],
-        ['IA', 360000],
-        ['KS', 111000],
-        ['KY', 140000],
-        ['LA', 210000],
-        ['ME', 120000],
-        ['MT', 310000],
-        ['NE', 222000],
-        ['NV', 241000],
-        ['NH', 311000],
-        ['NJ', 410000],
-        ['NM', 324000],
-        ['NY', 290000],
-        ['NC', 500000],
-        ['ND', 440000],
-        ['OH', 410000],
-        ['OK', 310000],
-        ['OR', 130000],
-        ['MD', 120000],
-        ['MA', 400000],
-        ['MI', 210000],
-        ['MN', 105000],
-        ['MS', 310000],
-        ['MO', 210000],
-        ['PA', 300000],
-        ['RI', 210000],
-        ['SC', 400000],
-        ['SD', 230000],
-        ['TN', 240000],
-        ['TX', 250000],
-        ['UT', 350000],
-        ['VT', 220000],
-        ['VA', 260000],
-        ['WA', 340000],
-        ['WV', 400000],
-        ['WI', 350000],
-        ['WY', 100000],
-        ]);
+function drawRegionsMap(dataArray, name) {
+    var data = google.visualization.arrayToDataTable(dataArray);
 
     var options = {
         region: 'US',
+        title: name,
         displayMode: 'regions',
         resolution: 'provinces',
         colorAxis: {
@@ -156,33 +270,64 @@ function drawChart() {
 };
 
 // Procedure cost by hospital in state
-google.charts.load('current', {
-    'packages': ['geochart'],
-    'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
-});
-google.charts.setOnLoadCallback(drawMarkersMap);
 
-function drawMarkersMap() {
-    var data = google.visualization.arrayToDataTable([
-        ['Hospital', 'Procedure Cost'],
-        ['2160 S 1ST AVENUE MAYWOOD', 100000],
-        ['4440 W 95TH STREET OAK LAWN', 200000],
-        ['251 E HURON ST CHICAGO', 150000],
-        ['5841 SOUTH MARYLAND CHICAGO', 300000],
-        ['1000 HEALTH CENTER DRIVE MATTOON', 100000],
-        ['2100 MADISON AVENUE GRANITE CITY', 200000],
-        ['400 MAPLE SUMMIT ROAD JERSEYVILLE', 150000],
-        ['1304 FRANKLIN AVENUE NORMAL', 300000],
-        ]);
+// google.charts.load('current', {
+//     'packages':['geochart'],
+//     'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
+// });
+// google.charts.setOnLoadCallback(drawMarkersMap);
 
-    var options = {
-        region: 'US-IL',
-        displayMode: 'markers',
-        resolution: 'provinces',
-        colorAxis: {
-            colors: ['#dee1e5', '#4374e0']
-        } // gray to blue
-    };
-    var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
-    chart.draw(data, options);
-};
+// function drawMarkersMap() {
+//     var data = google.visualization.arrayToDataTable([
+//         ['Hospital', 'Procedure Cost'],
+//         ['2160 S 1ST AVENUE MAYWOOD', 100000],
+//         ['4440 W 95TH STREET OAK LAWN', 200000],
+//         ['251 E HURON ST CHICAGO', 150000],
+//         ['5841 SOUTH MARYLAND CHICAGO', 300000],
+//         ['1000 HEALTH CENTER DRIVE MATTOON', 100000],
+//         ['2100 MADISON AVENUE GRANITE CITY', 200000],
+//         ['400 MAPLE SUMMIT ROAD JERSEYVILLE', 150000],
+//         ['1304 FRANKLIN AVENUE NORMAL', 300000],
+//         ]);
+
+//     var options = {
+//         region: 'US-IL',
+//         displayMode: 'markers',
+//         resolution: 'provinces',
+//         colorAxis: {colors: ['#dee1e5', '#4374e0']} // gray to blue
+//     };
+//     var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
+//     chart.draw(data, options);
+// };
+
+// google.charts.load('current', {
+//     'packages': ['geochart'],
+//     'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
+// });
+// google.charts.setOnLoadCallback(drawMarkersMap);
+
+// function drawMarkersMap() {
+//     var data = google.visualization.arrayToDataTable([
+//         ['Hospital', 'Procedure Cost'],
+//         ['2160 S 1ST AVENUE MAYWOOD', 100000],
+//         ['4440 W 95TH STREET OAK LAWN', 200000],
+//         ['251 E HURON ST CHICAGO', 150000],
+//         ['5841 SOUTH MARYLAND CHICAGO', 300000],
+//         ['1000 HEALTH CENTER DRIVE MATTOON', 100000],
+//         ['2100 MADISON AVENUE GRANITE CITY', 200000],
+//         ['400 MAPLE SUMMIT ROAD JERSEYVILLE', 150000],
+//         ['1304 FRANKLIN AVENUE NORMAL', 300000],
+//         ]);
+
+//     var options = {
+//         region: 'US-IL',
+//         displayMode: 'markers',
+//         resolution: 'provinces',
+//         colorAxis: {
+//             colors: ['#dee1e5', '#4374e0']
+//         } // gray to blue
+//     };
+//     var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
+//     chart.draw(data, options);
+// };
+

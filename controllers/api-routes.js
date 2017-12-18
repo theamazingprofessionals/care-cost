@@ -15,11 +15,13 @@ module.exports = function (app) {
 
     //all procedures
     app.get('/api/procedures', function (req, res) {
-        db.Provider.findAll({}).then(function (result) {
+        db.Procedure.findAll({}).then(function (result) {
             res.json(result);
         });
     });
-    //all procedures by id
+
+ //all procedures by id
+
     app.get('/api/procedures/:id', function (req, res) {
         db.Procedure.findAll({
             where: {
@@ -36,7 +38,6 @@ module.exports = function (app) {
             res.json(result);
         });
     });
-
 
     app.get("/api/cost/:zip", function (req, res) {
         db.Cost.findAll({
@@ -86,7 +87,7 @@ module.exports = function (app) {
                 }]
         }).then(function (result) {
             result = helpers.stateCostAverages(result)
-            console.log(result)
+            //console.log(result)
             res.json(result);
         });
     });
@@ -105,7 +106,7 @@ module.exports = function (app) {
             }],
             order: [['hospitalCharges', 'DESC']]
         }).then(function (result) {
-            console.log("before helper", result)
+            //console.log("before helper", result)
             result = helpers.costMinMax(result)
             res.json(result)
         })
@@ -130,7 +131,41 @@ module.exports = function (app) {
             res.json(result)
         })
     });
-};
+
+
+    //test handlebars route    
+    app.get("/api/avg/:id", function (req, res) {
+        db.Cost.findAll({
+            where: {
+                ProcedureProcedureId: req.params.id,
+            },
+            attributes: ['ProcedureProcedureId', 'hospitalCharges'],
+            include: [{
+                model: db.Provider,
+                attributes: ['state']
+            }]
+        }).then(function (result) {
+            //console.log(result)
+            result = helpers.stateCostAverages(result)
+            res.json(result)
+            //            res.render("list", {
+            //                state: result
+            //            })
+        });
+    });
+    app.get('/api/patient', function(req, res) {
+        db.Patient.findAll({}).then(function(result){
+            res.json(result);
+        });
+    });
+
+    app.post('/api/patient', function(req, res) {
+        db.Patient.create(req.body).then(function(dbPatient){
+            res.json(dbPatient);
+        });
+    });
+}
+
 
 
 //// examples ////

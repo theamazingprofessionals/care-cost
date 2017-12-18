@@ -1,5 +1,21 @@
 module.exports = function (sequelize, DataTypes) {
-    let Cost = sequelize.define('Cost', {
+    let Cost = sequelize.define('Cost', 
+    {
+        patientPayments: {
+            type: DataTypes.DECIMAL(10,2),
+            allowNull: false,
+        },
+        hospitalCharges:{
+            type: DataTypes.DECIMAL(10,2), 
+            allowNull: false,
+        },
+        medicarePayments:{
+            type: DataTypes.DECIMAL(10,2), 
+            allowNull: false,
+        },
+        totalPayments:{
+            type: DataTypes.DECIMAL(10,2), 
+        },
         patientPayments: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
