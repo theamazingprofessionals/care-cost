@@ -28,8 +28,11 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Routes
+// =============================================================
+
 require("./controllers/api-routes.js")(app);
-//require("./controllers/html-routes.js")(app);
+//require("./controllers/patientData-api-routes.js")(app);
+require("./controllers/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({
