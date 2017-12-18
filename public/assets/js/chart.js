@@ -1,3 +1,4 @@
+
 // Heart Transplant Chart of Highest and Lowest Cost in US
         google.charts.load('current', {'packages':['bar']});
         google.charts.setOnLoadCallback(drawChart);
@@ -162,9 +163,10 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       };
 
+
 //US Map Average Cost of Procedure Visualization
 google.charts.load('current', {
-    'packages':['geochart'],
+    'packages': ['geochart'],
     'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
 });
 google.charts.setOnLoadCallback(drawRegionsMap);
@@ -177,7 +179,9 @@ function drawRegionsMap(dataArray, name) {
         title: name,
         displayMode: 'regions',
         resolution: 'provinces',
-        colorAxis: {colors: ['#dee1e5', '#4374e0']} // gray to blue
+        colorAxis: {
+            colors: ['#dee1e5', '#4374e0']
+        } // gray to blue
     };
     var chart = new google.visualization.GeoChart(document.getElementById('map'));
     chart.draw(data, options);
@@ -185,7 +189,9 @@ function drawRegionsMap(dataArray, name) {
 
 // All States High vs Low Procedure Cost Bar Graph
 
-google.charts.load('current', {'packages':['bar']});
+google.charts.load('current', {
+    'packages': ['bar']
+});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
@@ -245,23 +251,26 @@ function drawChart() {
         ]);
 
     var options = {
-      chart: {
-        title: 'Procedure',
-        subtitle: 'High and Low Cost of Procedure by State',
-    },
-    bars: 'horizontal',
-    vAxis: {format: 'decimal'},
-    height: 800,
-    width: 900,
-    colors: ['#dee1e5', '#4374e0']
-};
+        chart: {
+            title: 'Procedure',
+            subtitle: 'High and Low Cost of Procedure by State',
+        },
+        bars: 'horizontal',
+        vAxis: {
+            format: 'decimal'
+        },
+        height: 800,
+        width: 900,
+        colors: ['#dee1e5', '#4374e0']
+    };
 
-var chart = new google.charts.Bar(document.getElementById('state_bar'));
+    var chart = new google.charts.Bar(document.getElementById('state_bar'));
 
-chart.draw(data, google.charts.Bar.convertOptions(options));
+    chart.draw(data, google.charts.Bar.convertOptions(options));
 };
 
 // Procedure cost by hospital in state
+
 // google.charts.load('current', {
 //     'packages':['geochart'],
 //     'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
@@ -290,3 +299,35 @@ chart.draw(data, google.charts.Bar.convertOptions(options));
 //     var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
 //     chart.draw(data, options);
 // };
+
+google.charts.load('current', {
+    'packages': ['geochart'],
+    'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
+});
+google.charts.setOnLoadCallback(drawMarkersMap);
+
+function drawMarkersMap() {
+    var data = google.visualization.arrayToDataTable([
+        ['Hospital', 'Procedure Cost'],
+        ['2160 S 1ST AVENUE MAYWOOD', 100000],
+        ['4440 W 95TH STREET OAK LAWN', 200000],
+        ['251 E HURON ST CHICAGO', 150000],
+        ['5841 SOUTH MARYLAND CHICAGO', 300000],
+        ['1000 HEALTH CENTER DRIVE MATTOON', 100000],
+        ['2100 MADISON AVENUE GRANITE CITY', 200000],
+        ['400 MAPLE SUMMIT ROAD JERSEYVILLE', 150000],
+        ['1304 FRANKLIN AVENUE NORMAL', 300000],
+        ]);
+
+    var options = {
+        region: 'US-IL',
+        displayMode: 'markers',
+        resolution: 'provinces',
+        colorAxis: {
+            colors: ['#dee1e5', '#4374e0']
+        } // gray to blue
+    };
+    var chart = new google.visualization.GeoChart(document.getElementById('state_map'));
+    chart.draw(data, options);
+};
+
