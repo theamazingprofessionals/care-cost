@@ -102,3 +102,7 @@ major fracture repair
 
 Hip and knee replacements 
 
+mysql://xhyn6i1v63lp0x71:voxzfc0seei74ntx@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jf225m0y54ejg866
+
+mysql -h ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com -u xhyn6i1v63lp0x71 -pvoxzfc0seei74ntx jf225m0y54ejg866 < medical_cost_db_updated_provider_info.sql
+
