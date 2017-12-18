@@ -18,7 +18,7 @@ $(function () {
 		var mapDataArray = []; 
 		mapDataArray.push(["State", 'Average Cost of Procedure']);
         $.each(data, function(key, value) {
-        	mapDataArray.push([value.state, value.averageCost]);
+        	mapDataArray.push([value.state, parseInt(value.averageCost)]);
         });
         console.log(mapDataArray);
         drawRegionsMap(mapDataArray, name);
@@ -30,7 +30,7 @@ $(function () {
     	var regionTemp = data[0].Provider.region;
     	var region = "US-"+ regionTemp.slice(0,2);
     	$.each(data, function(key, value){
-    		stateDataArray.push([value.Provider.address + " " + value.Provider.city + " " + value.Provider.state, value.hospitalCharges]);
+    		stateDataArray.push([value.Provider.address + " " + value.Provider.city + " " + value.Provider.state, parseInt(value.hospitalCharges)]);
     	})
     	console.log(stateDataArray);
     	drawMarkersMap(stateDataArray, name, region);
@@ -45,16 +45,28 @@ $(function () {
 
 	$(".proc-btn").on("click", function () {
 		$("#title-for-map").children("h1:first").remove();
+		$("#procedure-lead").text("");
+		$("state-ranking-title").text("");
 		let procId = $(this).data("id");
 		let name = $(this).text();
 		getRankedStateList(procId, name);
 		$("#title-for-map").append("<h1>"+ name+ "<small> Procedure Cost by State</small></h1>");
+		$("#procedure-lead").text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur.");
+		$("#state-ranking-title").text("State Ranking");
 	});
 
+	$("#nav-patient").on("click", function(){
+		console.log('clicked');
+		//$.get("/patient";
+	})
+
 	$(document).on("click", ".state-select", function () {
+		$("#title-for-state").children("h1:first").remove();
 		console.log("clicked")
+		let stateCap = $(this).data("state");
 		let state = $(this).data("state").toLowerCase();
 		let procId = $(this).data("id");
+		$("#title-for-state").append("<h1>"+ stateCap+ "<small> Procedure Cost by Hospital</small></h1>");
 		getStateCostData(state, procId);
 	})
 
