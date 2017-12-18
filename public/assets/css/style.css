@@ -1,70 +1,90 @@
 body {
-    background: #25407B;
+	background: #25407B;
 }
 
+.logo-area{
+	padding-bottom:9px;
+	margin:40px 0 20px;
+	border-bottom:1px solid #eee;
+}
+
+.logo-img{
+	width:100%; 
+	display:inline-block;
+}
+
+.logo-area-text{
+	display:inline-block; 
+	vertical-align:bottom;
+}
 .top-buffer {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .top-buffer-header {
-    margin-top: 200px;
+	margin-top: 200px;
 }
 
 .container {
-    background: white;
+	background: white;
 }
 
 .btn-default {
-    background-color: #DCE5F9;
-    font-weight: bold;
-    color: #13203E;
-    border-color: #3D6ACC;
+	background-color: #DCE5F9;
+	font-weight: bold;
+	color: #13203E;
+	border-color: #3D6ACC;
 }
 
 /*
 #min-max {
-    height: 500px;
-    background: url("/assets/img/illumination.jpg") no-repeat;
+	height: 500px;
+	background: url("/assets/img/illumination.jpg") no-repeat;
 }
 */
 
 #rank {
-    background: -webkit-gradient(linear, left top, left bottom, from(#4374e0), to(#13203e));
-    background: linear-gradient(#4374e0, #13203e);
-    max-height: 500px;
-    overflow: auto;
-    overflow: scroll;
-    overflow-x: hidden;
+	background: -webkit-gradient(linear, left top, left bottom, from(#4374e0), to(#13203e));
+	background: linear-gradient(#4374e0, #13203e);
+	max-height: 500px;
+	overflow: auto;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#list-div {
+	max-height: 400px;
+	overflow: auto;
 }
 
 button {
-    background-color: transparent;
-    color: #DCE5F9;
-    font-size: 9px;
-    width: 200px;
-    text-align: center;
-    border: none;
-    padding: 0;
-    margin: 0;
+	background-color: transparent;
+	color: #DCE5F9;
+	font-size: 9px;
+	width: 200px;
+	text-align: center;
+	border: none;
+	padding: 0;
+	margin: 0;
 }
 
 li {
-    border-bottom: 1px solid white;
+	border-bottom: 1px solid white;
 }
 
 li button {
-    font-size: 1em;
+	font-size: 1em;
 }
 
 ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    color: white;
-    text-align: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	color: white;
+	text-align: center;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+	width: 0px;
+	background: transparent;
 }
