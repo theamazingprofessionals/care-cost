@@ -2,9 +2,9 @@ const chart = $("#min-max");
 
 Chart.defaults.global.animation.duration = 200;
 
-var canvas = $("#min-max");
+const canvas = $("#min-max");
 
-var data = {
+const data = {
     labels: ["Pennsylvania", "Arizona"],
     datasets: [
         {
@@ -14,7 +14,7 @@ var data = {
     ]
 };
 
-function addData(procedure, state1, num1, state2, num2) {
+const addData = (procedure, state1, num1, state2, num2) => {
     barChart.data.labels = [state1, state2]
     barChart.data.datasets[0].label = [procedure]
     barChart.data.datasets[0].data = [num1, num2];
@@ -22,7 +22,7 @@ function addData(procedure, state1, num1, state2, num2) {
 }
 
 
-var barChart = Chart.Bar(canvas, {
+const barChart = Chart.Bar(canvas, {
     data: data,
 });
 
