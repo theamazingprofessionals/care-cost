@@ -11,13 +11,12 @@ module.exports = function (app){
 		//console.log(res);
 		res.render("index");
 	})
-}
 
-module.exports = function (app) {
-    app.get("/", function (req, res) {
+	app.get("/", function (req, res) {
         res.render("index", {
             title: "Care Cost"
         })
     })
-};
+}
+
 
