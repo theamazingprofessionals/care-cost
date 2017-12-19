@@ -88,35 +88,11 @@ UPDATE procedure_Name SET procedureDescription = "Includes all spinal fusions, n
 
 UPDATE procedure_Name SET procedureDescription = "Includes all hip and knee replacement procedures without major complications, as well as any reattachment of the leg, ankle or foot without major complications." WHERE procedureID = 470;
 
-001: A heart transplant is the surgical transplant procedure performed on patients with end-stage heart failure or severe coronary artery disease. 
+//for jawsdb:
 
-Includes all heart transplant procedures and implantation of ventricular assist devices with major complications and comorbidities.
+//mysql://xhyn6i1v63lp0x71:voxzfc0seei74ntx@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jf225m0y54ejg866
 
-Heart Transplant or implanting a ventricular assist device with Major Complications or Comorbidities
-
-004: Includes all tracheostomy procedures with mechanical ventilation that is performed for over 4 days without a major operating room procedure, or a principal diagnosis, excluding face, mouth, and neck disorders, without a major operating room procedure. 
-
-Tracheostomy with Mechanical Ventilation for 96+ Hours or Principal Diagnosis Except Face, Mouth and Neck Disorders without Major O.R. Procedure
-
-236: Includes all coronary bypass procedures without the need of a heart catheter and without any major complications. 
-
-Coronary Bypass without Cardiac Catheterization without major complications
-
-419: Includes all laparoscopic cholecystectomy procedures without common duct exploration and with out complications and comorbidities.
-
-Laparoscopic Cholecystectomy without common duct exploration without complications and Comorbidities 
-460: Includes all spinal fusions, not including cervical, and generally does not involve large deformity corrections, tumors, or major fracture repair.
-
-spine fusion, not including cervical, and is characteristically the basic code utilized
-for spinal fusion for our patient base that does not involve large deformity corrections, tumors or
-major fracture repair
-470: Includes all hip and knee replacement procedures without major complications, as well as any reattachment of the leg, ankle or foot without major complications.
-
-Hip and knee replacements 
-
-mysql://xhyn6i1v63lp0x71:voxzfc0seei74ntx@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jf225m0y54ejg866
-
-mysql -h dyud5fa2qycz1o3v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	 -u t2igeqq5umlz86cu -pxa3v69sohv3t2duv ty85u50i6apx0b70 < medical_cost_db_updated_medicare_data.sql
+//mysql -h dyud5fa2qycz1o3v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	 -u t2igeqq5umlz86cu -pxa3v69sohv3t2duv ty85u50i6apx0b70 < medical_cost_db_updated_medicare_data.sql
 
 INSERT IGNORE INTO ty85u50i6apx0b70.provider_Info (
 	providerId, providerName, address, city, state, zipCode, region
