@@ -8,21 +8,41 @@ body {
 	border-bottom:1px solid #eee;
 }
 
+.map-style{
+	max-width: 750px;
+	max-height: 500px;
+}
+
 .logo-img{
-	width:100%; 
+	width:50%; 
 	display:inline-block;
+	margin-bottom:5px;
 }
 
 .logo-area-text{
 	display:inline-block; 
 	vertical-align:bottom;
+	margin-bottom: 0px;
+	margin-left: 15px;
 }
 .top-buffer {
 	margin-top: 20px;
 }
 
+.top-margin{
+	margin-top: 5px;
+}
+
+.left-margin{
+	margin-left: 10px;
+}
+
 .top-buffer-header {
 	margin-top: 200px;
+}
+
+.top-buffer-body{
+	margin-top: 50px;
 }
 
 .container {
@@ -34,6 +54,10 @@ body {
 	font-weight: bold;
 	color: #13203E;
 	border-color: #3D6ACC;
+}
+
+.state-select{
+	color:white;
 }
 
 /*

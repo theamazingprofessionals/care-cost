@@ -18,6 +18,7 @@ $(document).ready(function() {
 			healthScore: $('input[name="inlineRadioOptions"]:checked').val()
 		});
 		emptyForm();
+		window.location.href = '/';
 	}
 	/*************This is relevant to the handlebars stuff**********************/
 	function getPatientData() {

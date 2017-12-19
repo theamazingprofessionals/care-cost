@@ -12,6 +12,10 @@ module.exports = function (sequelize, DataTypes) {
         procedureName: {
             type: DataTypes.STRING(70),
             allowNull: false,
+        },
+        procedureDescription: {
+            type: DataTypes.STRING(300),
+            allowNull: false
         }
     }, {
         timestamps: false,

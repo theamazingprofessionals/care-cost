@@ -1,9 +1,8 @@
 $(function () {
-
 	function getRankedStateList(procId, name) {
 		$.get('/api/avg/' + procId).then(function (data) {
 			//console.log(data);
-			let list = "<ol>{{#each data}}<li><button class='state-select' data-state='{{this.state}}' data-id='{{this.procId}}'>{{this.state}}</button></li>{{/each}}</ol>";
+			let list = "<ol>{{#each data}}<li><a href ='#stateAnchor' class='state-select' data-state='{{this.state}}' data-id='{{this.procId}}'>{{this.state}}</a></li>{{/each}}</ol>";
 			console.log(data);
 			getDataForMap(data, name);
 			let compiledTemplate = Handlebars.compile(list);
@@ -21,18 +20,20 @@ $(function () {
         	mapDataArray.push([value.state, parseInt(value.averageCost)]);
         });
         console.log(mapDataArray);
+        createRegionMap();
         drawRegionsMap(mapDataArray, name);
     }
 
     function getDataForState(data, name){
     	var stateDataArray = [];
-    	stateDataArray.push(["Hospital", "Procedure Cost"]);
+    	stateDataArray.push(["Hospital Name", "Hospital Address", "Procedure Cost"]);
     	var regionTemp = data[0].Provider.region;
     	var region = "US-"+ regionTemp.slice(0,2);
     	$.each(data, function(key, value){
-    		stateDataArray.push([value.Provider.address + " " + value.Provider.city + " " + value.Provider.state, parseInt(value.hospitalCharges)]);
+    		stateDataArray.push([value.Provider.providerName, value.Provider.address + " " + value.Provider.city + " " + value.Provider.state, parseInt(value.hospitalCharges)]);
     	})
     	console.log(stateDataArray);
+    	createStateMap();
     	drawMarkersMap(stateDataArray, name, region);
     }
 
@@ -48,10 +49,12 @@ $(function () {
 		$("#procedure-lead").text("");
 		$("state-ranking-title").text("");
 		let procId = $(this).data("id");
-		let name = $(this).text();
+		let name = $(this).data("name");
+		let procDesc = $(this).data("desc");
+		console.log(procDesc);
 		getRankedStateList(procId, name);
 		$("#title-for-map").append("<h1>"+ name+ "<small> Procedure Cost by State</small></h1>");
-		$("#procedure-lead").text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra velit massa, et tempus lorem hendrerit eu. Fusce nec ligula placerat, dictum arcu in, interdum arcu. Curabitur dignissim porttitor justo at efficitur.");
+		$("#procedure-lead").text(procDesc);
 		$("#state-ranking-title").text("State Ranking");
 	});
 
