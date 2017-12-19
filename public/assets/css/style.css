@@ -1,0 +1,114 @@
+body {
+	background: #25407B;
+}
+
+.logo-area{
+	padding-bottom:9px;
+	margin:40px 0 20px;
+	border-bottom:1px solid #eee;
+}
+
+.map-style{
+	max-width: 750px;
+	max-height: 500px;
+}
+
+.logo-img{
+	width:50%; 
+	display:inline-block;
+	margin-bottom:5px;
+}
+
+.logo-area-text{
+	display:inline-block; 
+	vertical-align:bottom;
+	margin-bottom: 0px;
+	margin-left: 15px;
+}
+.top-buffer {
+	margin-top: 20px;
+}
+
+.top-margin{
+	margin-top: 5px;
+}
+
+.left-margin{
+	margin-left: 10px;
+}
+
+.top-buffer-header {
+	margin-top: 200px;
+}
+
+.top-buffer-body{
+	margin-top: 50px;
+}
+
+.container {
+	background: white;
+}
+
+.btn-default {
+	background-color: #DCE5F9;
+	font-weight: bold;
+	color: #13203E;
+	border-color: #3D6ACC;
+}
+
+.state-select{
+	color:white;
+}
+
+/*
+#min-max {
+	height: 500px;
+	background: url("/assets/img/illumination.jpg") no-repeat;
+}
+*/
+
+#rank {
+	background: -webkit-gradient(linear, left top, left bottom, from(#4374e0), to(#13203e));
+	background: linear-gradient(#4374e0, #13203e);
+	max-height: 500px;
+	overflow: auto;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#list-div {
+	max-height: 400px;
+	overflow: auto;
+}
+
+button {
+	background-color: transparent;
+	color: #DCE5F9;
+	font-size: 9px;
+	width: 200px;
+	text-align: center;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	border-bottom: 1px solid white;
+}
+
+li button {
+	font-size: 1em;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	color: white;
+	text-align: center;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}

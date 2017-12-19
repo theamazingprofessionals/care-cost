@@ -1,0 +1,69 @@
+<div class="container">
+	<a name="topAnchor" id="topAnchor"></a>
+	<div class="row">
+		<div class="col-md-6">
+			<p class="lead">The United States health system is one of the most complicated in the world. Simply, the cost of a medical procedure can not only drastically vary in cost from state to state, but from hospital to hospital, even in a single community. For example, in Alabama, an EMT can decide to drive you to one hospital where a coronary bypass will cost you six times as much as a nearby hospital, potentially costing an extra $431,970.23.</p>
+
+			<h5 class="top-buffer">Choose a procedure to view the vast difference of cost between states in the US.</h5>
+
+			<div class="col-md-12" id="procs-div">
+				{{#each names}}
+					<div class="col-md-6 top-buffer"><a class="btn btn-default btn-block proc-btn" href="#procedureAnchor" role="button" data-id="{{this.procedureId}}" data-name="{{this.procedureName}}" data-desc ="{{this.procedureDescription}}">{{this.procedureName}}</a></div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="col-md-6">
+			<canvas id="min-max"></canvas>
+		</div>
+	</div>
+
+	<div class="page-header top-buffer-body" id = "title-for-map">
+		<a name='procedureAnchor' id='procedureAnchor'></a>
+	</div>
+
+	<div class="row">
+
+		<div id="one" class="col-md-8">
+			<p class="lead" id = "procedure-lead"></p>
+
+			<div id="map" class = "map-style"></div>
+		</div>
+		<!-- end one -->
+
+		<div class="col-md-4">
+			<h2 class="text-center" id = "state-ranking-title"></h2>
+			<div id="rank">
+				<div id="list-div">
+				</div>
+			</div>
+		</div>
+		<!-- end col-md-4 -->
+	</div>
+	<!-- end row -->
+	<div class="page-header top-buffer-body" id = "title-for-state">
+			<a name='procedureAnchor' id='stateAnchor'></a>
+	</div>
+	<div class = "row">
+
+		<div id="two" class="col-md-8">
+			<div id = "state_map" class = "map-style"></div>
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-md-2 col-md-offset-10">
+			<a href="#topAnchor">Back to Top</a>
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+</div>
+<!-- end container -->
+
+	
