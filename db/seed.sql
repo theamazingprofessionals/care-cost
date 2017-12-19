@@ -76,9 +76,21 @@ INSERT INTO medical_cost_db_updated.cost_Data(
 SELECT patient_oop_payments, provider_id, procedure_id, average_covered_charges, average_medicare_payments, average_totalPayments
 FROM medical_cost_db_updated.medicare_data;
 
+UPDATE procedure_Name SET procedureDescription = "Includes all heart transplant procedures and implantation of ventricular assist devices with major complications and comorbidities." WHERE procedureID = 1;
+
+UPDATE procedure_Name SET procedureDescription = "Includes all tracheostomy procedures with mechanical ventilation that is performed for over 4 days without a major operating room procedure, or a principal diagnosis, excluding face, mouth, and neck disorders, without a major operating room procedure." WHERE procedureID = 4;
+
+UPDATE procedure_Name SET procedureDescription = "Includes all coronary bypass procedures without the need of a heart catheter and without any major complications." WHERE procedureID = 236;
+
+UPDATE procedure_Name SET procedureDescription = "Includes all laparoscopic cholecystectomy procedures without common duct exploration and with out complications and comorbidities." WHERE procedureID = 419;
+
+UPDATE procedure_Name SET procedureDescription = "Includes all spinal fusions, not including cervical, and generally does not involve large deformity corrections, tumors, or major fracture repair." WHERE procedureID = 460;
+
+UPDATE procedure_Name SET procedureDescription = "Includes all hip and knee replacement procedures without major complications, as well as any reattachment of the leg, ankle or foot without major complications." WHERE procedureID = 470;
+
 001: A heart transplant is the surgical transplant procedure performed on patients with end-stage heart failure or severe coronary artery disease. 
 
-Includes all heart transplant procedures and implantation of ventricular assist devices with major complications and comorbidities
+Includes all heart transplant procedures and implantation of ventricular assist devices with major complications and comorbidities.
 
 Heart Transplant or implanting a ventricular assist device with Major Complications or Comorbidities
 

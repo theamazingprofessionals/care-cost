@@ -1,8 +1,8 @@
 {
     "development": {
         "username": "root",
-        "password": "abc123",
-        "database": "medical_cost_db",
+        "password": "ShAzeb!985!",
+        "database": "medical_cost_db_updated",
         "host": "127.0.0.1",
         "dialect": "mysql",
         "define": {

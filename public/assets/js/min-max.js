@@ -1,5 +1,4 @@
 //Chart.defaults.global.animation.duration = 200;
-
 const addData = (procedure, state1, num1, state2, num2) => {
     barChart.data.labels = [state1, state2]
     barChart.data.datasets[0].data = [num1, num2];
@@ -29,17 +28,14 @@ const barChart = Chart.Bar($("#min-max"), {
     }
 })
 
+function createRegionMap(){
 
-
-
-
-
-
-google.charts.load('current', {
-    'packages': ['geochart'],
-    'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
-});
-google.charts.setOnLoadCallback(drawRegionsMap);
+    google.charts.load('current', {
+        'packages': ['geochart'],
+        'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+}
 
 function drawRegionsMap(dataArray, name) {
     var data = google.visualization.arrayToDataTable(dataArray);
@@ -56,11 +52,13 @@ function drawRegionsMap(dataArray, name) {
     chart.draw(data, options);
 };
 
-google.charts.load('current', {
-    'packages': ['geochart'],
-    'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
-});
-google.charts.setOnLoadCallback(drawMarkersMap);
+function createStateMap(){
+    google.charts.load('current', {
+        'packages': ['geochart'],
+        'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'
+    });
+    google.charts.setOnLoadCallback(drawMarkersMap);
+}
 
 function drawMarkersMap(dataArray, name, region) {
     var data = google.visualization.arrayToDataTable(dataArray);
