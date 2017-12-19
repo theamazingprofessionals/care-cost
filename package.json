@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "care-cost",
     "version": "1.0.0",
     "description": "'discover the true cost fluctuation of medical procedure costs around the country'",
@@ -26,32 +25,4 @@
         "path.join": "^1.0.0",
         "sequelize": "^4.28.0"
     }
-=======
-  "name": "care-cost",
-  "version": "1.0.0",
-  "description": "'discover the true cost fluctuation of medical procedure costs around the country'",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theamazingprofessionals/care-cost.git"
-  },
-  "author": "Spencer, Umer, Brian, and Michael",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/theamazingprofessionals/care-cost/issues"
-  },
-  "homepage": "https://github.com/theamazingprofessionals/care-cost#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
-    "mysql2": "^1.5.1",
-    "path.join": "^1.0.0",
-    "sequelize": "^4.28.0"
-  }
->>>>>>> b3ee0db43637ceca0b4d7bdcf62ec1bb6018aae1
 }
