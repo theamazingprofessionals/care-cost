@@ -1,7 +1,7 @@
 //Chart.defaults.global.animation.duration = 200;
 const addData = (procedure, state1, num1, state2, num2) => {
-    barChart.data.labels = [state1, state2]
-    barChart.data.datasets[0].data = [num1, num2];
+    barChart.data.labels = [state2, state1]
+    barChart.data.datasets[0].data = [num2, num1];
     barChart.options.title.text[1] = procedure
     barChart.update();
 }
@@ -28,7 +28,7 @@ const barChart = Chart.Bar($("#min-max"), {
     }
 })
 
-function createRegionMap(){
+function createRegionMap() {
 
     google.charts.load('current', {
         'packages': ['geochart'],
@@ -52,7 +52,7 @@ function drawRegionsMap(dataArray, name) {
     chart.draw(data, options);
 };
 
-function createStateMap(){
+function createStateMap() {
     google.charts.load('current', {
         'packages': ['geochart'],
         'mapsApiKey': 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY'

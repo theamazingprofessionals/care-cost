@@ -1,10 +1,10 @@
-# Ill-Lumination: Showing the Real Cost of Care
+# Illumination: Showing the Real Cost of Care
 
 ![Alt Text](public/assets/img/illumination.jpg)
 
 ### Synopsis
 
-Ill-Lumination is a web-based application that provides the highest and lowest costs of procedures in individual U.S. states.  In this first build, we are highlighting the costs of:
+Illumination is a web-based application that provides the highest and lowest costs of procedures in individual U.S. states.  In this first build, we are highlighting the costs of:
 
 * Tracheotomies 
 * Hip or Knee Replacements
@@ -35,4 +35,4 @@ We found a dataset of Medicare Inpatient Provider Charges that both shocked and 
 * Michael Doherty
 * Brian Hagy
 * Spencer Hawk
-* Umer Rathor
+* Umer Rathore
