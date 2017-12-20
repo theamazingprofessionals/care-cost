@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(70),
             allowNull: false,
         },
-        address: {
+        address_old: {
             type: DataTypes.STRING(95),
             allowNull: false,
         },
@@ -21,17 +21,25 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(35),
             allowNull: false,
         },
-        zipCode: {
+        zipCode_old: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
         },
         region: {
             type: DataTypes.STRING(70),
             allowNull: false,
+        },
+        latitude:{
+            type: DataTypes.DECIMAL(11,8),
+            allowNull:false
+        },
+        longitude:{
+            type: DataTypes.DECIMAL(11,8),
+            allowNull:false
         }
     }, {
         timestamps: false,
-        tableName: "provider_Info"
+        tableName: "provider_info_geocoded"
 
 
     });

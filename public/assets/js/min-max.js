@@ -61,8 +61,15 @@ function createStateMap(){
 }
 
 function drawMarkersMap(dataArray, name, region) {
-    var data = google.visualization.arrayToDataTable(dataArray);
-
+    //var data = google.visualization.arrayToDataTable(dataArray);
+    var data = new google.visualization.DataTable();
+    //data.addColumn('number', 'Hospital Name');
+    data.addColumn('number', 'Latitude');
+    data.addColumn('number', 'Longitude');
+    data.addColumn('string', 'Label');
+    data.addColumn('number','Procedure Cost');
+    data.addColumn({type: 'string', role:'tooltip', p:{html:true}});
+    data.addRows(dataArray);
     var options = {
         sizeAxis: {
             minValue: 0,
@@ -70,6 +77,7 @@ function drawMarkersMap(dataArray, name, region) {
         },
         displayMode: 'markers',
         region: region,
+        tooltip: {isHtml: true},
         resolution: 'provinces',
         colorAxis: {
             colors: ['#dee1e5', '#4374e0']

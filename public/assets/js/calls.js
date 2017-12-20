@@ -26,11 +26,13 @@ $(function () {
 
     function getDataForState(data, name){
     	var stateDataArray = [];
-    	stateDataArray.push(["Hospital Name", "Hospital Address", "Procedure Cost"]);
+    	//stateDataArray.push(["Latitude", "Longitude", {role:'tooltip', label:"Procedure Cost"}, {type:'string', role:'tooltip'}]);
     	var regionTemp = data[0].Provider.region;
     	var region = "US-"+ regionTemp.slice(0,2);
     	$.each(data, function(key, value){
-    		stateDataArray.push([value.Provider.providerName, value.Provider.address + " " + value.Provider.city + " " + value.Provider.state, parseInt(value.hospitalCharges)]);
+    		var lat = parseFloat(value.Provider.latitude);
+    		var lon = parseFloat(value.Provider.longitude);
+    		stateDataArray.push([lat, lon, value.Provider.providerName,parseInt(value.hospitalCharges), "$"+ value.hospitalCharges]);
     	})
     	console.log(stateDataArray);
     	createStateMap();
