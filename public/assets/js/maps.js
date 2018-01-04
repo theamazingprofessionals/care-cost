@@ -1,10 +1,4 @@
-function createRegionMap() {
-  google.charts.load('current', {
-    packages: ['geochart'],
-    mapsApiKey: 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY',
-  });
-  google.charts.setOnLoadCallback(drawRegionsMap);
-}
+google.charts.load('current', { packages: ['corechart'] });
 
 function drawRegionsMap(dataArray, name) {
   const data = google.visualization.arrayToDataTable(dataArray);
@@ -14,25 +8,33 @@ function drawRegionsMap(dataArray, name) {
     displayMode: 'regions',
     resolution: 'provinces',
     colorAxis: {
-      colors: ['#dee1e5', '#4374e0'],
-    }, // gray to blue
+        colors: ['#dee1e5', '#4374e0'],
+      }, // gray to blue
   };
   const chart = new google.visualization.GeoChart(document.getElementById('map'));
   chart.draw(data, options);
 }
+
+function createRegionMap() {
+  google.charts.load('current', {
+    packages: ['geochart'],
+    mapsApiKey: 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY',
+  });
+}
+
 
 function createStateMap() {
   google.charts.load('current', {
     packages: ['geochart'],
     mapsApiKey: 'AIzaSyCfZ7tXLzQQU_yWm7iJJwWjKwaasAFUUBY',
   });
-  google.charts.setOnLoadCallback(drawMarkersMap);
+//   google.charts.setOnLoadCallback(drawMarkersMap);
 }
 
 function drawMarkersMap(dataArray, name, region) {
-      // var data = google.visualization.arrayToDataTable(dataArray);
+    // var data = google.visualization.arrayToDataTable(dataArray);
   const data = new google.visualization.DataTable();
-      // data.addColumn('number', 'Hospital Name');
+    // data.addColumn('number', 'Hospital Name');
   data.addColumn('number', 'Latitude');
   data.addColumn('number', 'Longitude');
   data.addColumn('string', 'Label');
@@ -41,16 +43,16 @@ function drawMarkersMap(dataArray, name, region) {
   data.addRows(dataArray);
   const options = {
     sizeAxis: {
-      minValue: 0,
-      maxValue: 100,
-    },
+        minValue: 0,
+        maxValue: 100,
+      },
     displayMode: 'markers',
     region,
     tooltip: { isHtml: true },
     resolution: 'provinces',
     colorAxis: {
-      colors: ['#dee1e5', '#4374e0'],
-    }, // gray to blue
+        colors: ['#dee1e5', '#4374e0'],
+      }, // gray to blue
   };
   const chart = new google.visualization.GeoChart(document.getElementById('state_map'));
   chart.draw(data, options);
