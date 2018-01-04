@@ -1,5 +1,7 @@
 $(() => {
 
+	drawBarChart();
+
 	function getDataForMap(data, name) {
 		const mapDataArray = [];
 		mapDataArray.push(['State', 'Average Cost of Procedure']);
