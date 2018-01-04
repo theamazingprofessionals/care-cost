@@ -1,4 +1,5 @@
 $(() => {
+
 	function getDataForMap(data, name) {
 		const mapDataArray = [];
 		mapDataArray.push(['State', 'Average Cost of Procedure']);
@@ -57,7 +58,7 @@ $(() => {
 		getRankedStateList(procId, name);
 		$('#title-for-map').append(`<h1>${name}<small> Procedure Cost by State</small></h1>`);
 		$('#procedure-lead').text(procDesc);
-		$('#state-ranking-title').text('State Ranking');
+		$('.state-ranking-title').prepend("<h4>Average Cost from Greatest to Least</h4>").prepend("<h2>State Ranking</h2>");
 	});
 
 

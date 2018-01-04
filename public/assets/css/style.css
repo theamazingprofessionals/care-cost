@@ -8,6 +8,10 @@ body {
 	border-bottom:1px solid #eee;
 }
 
+.index-wrapper {
+	padding: 2em;
+}
+
 .map-style{
 	max-width: 750px;
 	max-height: 500px;
@@ -25,6 +29,14 @@ body {
 	margin-bottom: 0px;
 	margin-left: 15px;
 }
+
+.info-text {
+    padding: 1em 6.5em 1.5em 1.5em;
+    font-size: 1.15em;
+    text-indent: .25em;
+}
+
+
 .top-buffer {
 	margin-top: 20px;
 }
@@ -60,14 +72,9 @@ body {
 	color:white;
 }
 
-/*
-#min-max {
-	height: 500px;
-	background: url("/assets/img/illumination.jpg") no-repeat;
-}
-*/
 
 #rank {
+	margin-top: 1.5em;
 	background: -webkit-gradient(linear, left top, left bottom, from(#4374e0), to(#13203e));
 	background: linear-gradient(#4374e0, #13203e);
 	max-height: 500px;
