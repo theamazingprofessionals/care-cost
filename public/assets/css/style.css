@@ -2,50 +2,49 @@ body {
 	background: #25407B;
 }
 
-.logo-area{
-	padding-bottom:9px;
-	margin:40px 0 20px;
-	border-bottom:1px solid #eee;
+.logo-area {
+	padding-bottom: 9px;
+	margin: 40px 0 20px;
+	border-bottom: 1px solid #eee;
 }
 
 .index-wrapper {
 	padding: 2em;
 }
 
-.map-style{
+.map-style {
 	max-width: 750px;
 	max-height: 500px;
 }
 
-.logo-img{
-	width:50%; 
-	display:inline-block;
-	margin-bottom:5px;
+.logo-img {
+	width: 50%;
+	display: inline-block;
+	margin-bottom: 5px;
 }
 
-.logo-area-text{
-	display:inline-block; 
-	vertical-align:bottom;
+.logo-area-text {
+	display: inline-block;
+	vertical-align: bottom;
 	margin-bottom: 0px;
 	margin-left: 15px;
 }
 
 .info-text {
-    padding: 1em 6.5em 1.5em 1.5em;
-    font-size: 1.15em;
-    text-indent: .25em;
+	padding: 1em 6.5em 1.5em 1.5em;
+	font-size: 1.15em;
+	text-indent: .25em;
 }
-
 
 .top-buffer {
 	margin-top: 20px;
 }
 
-.top-margin{
+.top-margin {
 	margin-top: 5px;
 }
 
-.left-margin{
+.left-margin {
 	margin-left: 10px;
 }
 
@@ -53,7 +52,7 @@ body {
 	margin-top: 200px;
 }
 
-.top-buffer-body{
+.top-buffer-body {
 	margin-top: 50px;
 }
 
@@ -68,10 +67,9 @@ body {
 	border-color: #3D6ACC;
 }
 
-.state-select{
-	color:white;
+.state-select {
+	color: white;
 }
-
 
 #rank {
 	margin-top: 1.5em;
@@ -97,6 +95,11 @@ button {
 	border: none;
 	padding: 0;
 	margin: 0;
+}
+
+.back-btn {
+	width: 200px;
+	margin-left: 1em;
 }
 
 li {
