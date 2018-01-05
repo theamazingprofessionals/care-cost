@@ -1,6 +1,8 @@
 $(() => {
 
-	drawBarChart();
+	if (window.location.pathname === "/") {
+		drawBarChart();
+	}
 
 	function getDataForMap(data, name) {
 		const mapDataArray = [];
