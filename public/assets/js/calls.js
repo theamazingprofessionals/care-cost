@@ -15,12 +15,12 @@ $(function () {
 
 	function getDataForMap(data, name){
 		var mapDataArray = []; 
-		mapDataArray.push(["State", 'Average Cost of Procedure']);
+		//mapDataArray.push(["State", 'Average Cost of Procedure']);
         $.each(data, function(key, value) {
         	mapDataArray.push([value.state, parseInt(value.averageCost)]);
         });
         console.log(mapDataArray);
-        createRegionMap();
+       // createRegionMap();
         drawRegionsMap(mapDataArray, name);
     }
 
@@ -35,7 +35,7 @@ $(function () {
     		stateDataArray.push([lat, lon, value.Provider.providerName,parseInt(value.hospitalCharges), "$"+ value.hospitalCharges]);
     	})
     	console.log(stateDataArray);
-    	createStateMap();
+    	//createStateMap();
     	drawMarkersMap(stateDataArray, name, region);
     }
 
@@ -79,8 +79,8 @@ $(function () {
         let id = $(this).data("id");
         let name = $(this).data("name");
         $.get("/api/mm/" + id).then(function (data) {
-            console.log(data);
-            console.log(data[0])
+            //console.log(data);
+            //console.log(data[0])
             addData(name, data[0].state, data[0].min, data[1].state, data[1].max)
         })
     })
@@ -93,4 +93,4 @@ $(function () {
     this.scrollTop += (delta < 0 ? 1 : -1) * 30;
     e.preventDefault();
     });
-    });
+});
