@@ -87,7 +87,6 @@ module.exports = function (app) {
                 }]
         }).then(function (result) {
             result = helpers.stateCostAverages(result)
-            //console.log(result)
             res.json(result);
         });
     });
