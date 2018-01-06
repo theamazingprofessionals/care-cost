@@ -1,4 +1,4 @@
-# Illumination: Showing the Real Cost of Care
+# Illumination: Hospital Procedure Cost Variations
 
 ![Alt Text](public/assets/img/logo1.png)
 
