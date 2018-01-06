@@ -1,6 +1,6 @@
 # Illumination: Showing the Real Cost of Care
 
-![Alt Text](public/assets/img/illumination.jpg)
+![Alt Text](public/assets/img/logo1.png)
 
 ### Synopsis
 
@@ -20,6 +20,20 @@ In future builds, we plan on including a more extensive list of procedures and a
 
 We found a dataset of Medicare Inpatient Provider Charges that both shocked and disgusted us, and we thought it'd be great to visualize this data in a way that would be both informative and fun to play with.  
 
+### App In Action
+
+#### Overview of Procedures
+![Alt Text](public/assets/img/app1.gif)
+
+#### Countrywide View of a Procedure
+![Alt Text](public/assets/img/app2.gif)
+
+#### Statewide View of a Procedure
+![Alt Text](public/assets/img/app3.gif)
+
+#### Patient Data Entry
+![Alt Text](public/assets/img/app4.gif)
+
 ### Built With
 
 * Javascript + jQuery
@@ -28,7 +42,6 @@ We found a dataset of Medicare Inpatient Provider Charges that both shocked and 
 * Body-Parser
 * Express
 * Heroku
-
 
 ### Authors
 
