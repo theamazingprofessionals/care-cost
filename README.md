@@ -2,6 +2,8 @@
 
 ![Alt Text](public/assets/img/logo1.png)
 
+## [Try it out](https://ill-umination.herokuapp.com/)
+
 ### Synopsis
 
 Illumination is a web-based application that provides the highest and lowest costs of procedures in individual U.S. states.  In this first build, we are highlighting the costs of:
